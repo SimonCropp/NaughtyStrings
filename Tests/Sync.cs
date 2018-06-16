@@ -89,10 +89,11 @@ namespace NaughtyStrings.Bogus
         {{
             return TheNaughtyStrings.{name}.PickRandom(num);
         }}
+
         /// <summary>
         /// {comment}
         /// </summary>
-        public string {name.TrimEnd('s')}()
+        public string {name}()
         {{
             return TheNaughtyStrings.{name}.PickRandom();
         }}");
