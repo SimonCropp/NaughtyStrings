@@ -24,6 +24,8 @@ var emoji = TheNaughtyStrings.Emoji.Take(10);
 
 ## NaughtyStrings.Bogus
 
+Extends [Bogus](https://github.com/bchavez/Bogus) to use Naughty Strings.
+
 
 ### NaughtyStrings.Bogus [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
 
