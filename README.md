@@ -6,7 +6,7 @@ Provides a strong typed .NET API for [big-list-of-naughty-strings](https://githu
 ## NaughtyStrings
 
 
-### The NuGet packages[![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings/)
+### The NuGet packages [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings/)
 
 https://nuget.org/packages/NaughtyStrings/
 
