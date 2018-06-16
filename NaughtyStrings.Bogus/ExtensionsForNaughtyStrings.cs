@@ -1,7 +1,7 @@
-﻿using Bogus;
-using Bogus.Premium;
+﻿using Bogus.Premium;
+using NaughtyStrings.Bogus;
 
-namespace NaughtyStrings.Bogus
+namespace Bogus
 {
     public static class ExtensionsForNaughtyStrings
     {

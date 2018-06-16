@@ -57,14 +57,21 @@ namespace NaughtyStrings.Bogus
         /// <summary>
         /// All naughty strings.
         /// </summary>
-        public static IEnumerable<string> Strings(int num = 1)
+        public IEnumerable<string> Strings(int num = 1)
         {
             return TheNaughtyStrings.All.PickRandom(num);
+        }
+        /// <summary>
+        /// A naughty string.
+        /// </summary>
+        public string String()
+        {
+            return TheNaughtyStrings.All.PickRandom();
         }");
 
         foreach (var category in categories)
         {
-            WriteList2(writer, category.Title, category.Description);
+            WriteBogusItem(writer, category.Title, category.Description);
         }
 
         writer.WriteLine(@"
@@ -72,15 +79,22 @@ namespace NaughtyStrings.Bogus
 }");
     }
 
-    static void WriteList2(StreamWriter writer, string name, string comment)
+    static void WriteBogusItem(StreamWriter writer, string name, string comment)
     {
         writer.WriteLine($@"
         /// <summary>
         /// {comment}
         /// </summary>
-        public static IEnumerable<string> {name}(int num = 1)
+        public IEnumerable<string> {name}(int num = 1)
         {{
             return TheNaughtyStrings.{name}.PickRandom(num);
+        }}
+        /// <summary>
+        /// {comment}
+        /// </summary>
+        public string {name.TrimEnd('s')}()
+        {{
+            return TheNaughtyStrings.{name}.PickRandom();
         }}");
     }
 
