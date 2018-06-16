@@ -15,7 +15,7 @@ https://nuget.org/packages/NaughtyStrings/
 
 ### Usage
 
-The entry type is a static class `TheNaughtyStrings`. It exposes all string via `TheNaughtyStrings.All` and individual categories by name:
+The entry type is a static class `TheNaughtyStrings`. It exposes all strings via `TheNaughtyStrings.All` and individual categories by name:
 
 ```csharp
 var items = TheNaughtyStrings.All.Take(10);
@@ -36,12 +36,17 @@ https://nuget.org/packages/NaughtyStrings.Bogus/
 
 ### Usage
 
+
+The entry extension method is `Naughty()`. It exposes all strings via `.String()` and individual categories by name:
+
 ```csharp
 var faker = new Faker<Target>()
-    .RuleFor(u => u.Property, (f, u) => f.Naughty().String());
+    .RuleFor(u => u.Property1, (f, u) => f.Naughty().String())
+    .RuleFor(u => u.Property2, (f, u) => f.Naughty().Emoji());
 
 var target = faker.Generate();
-Debug.WriteLine(target.Property);
+Debug.WriteLine(target.Property1);
+Debug.WriteLine(target.Property2);
 ```
 
 
