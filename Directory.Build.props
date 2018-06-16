@@ -12,7 +12,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)) Simon Cropp. All rights reserved</Copyright>
     <PackageTags>NaughtyStrings, Bogus</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/NaughtyStrings/master/Icon/package_icon.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/NaughtyStrings/master/icon.png</PackageIconUrl>
     <PackageProjectUrl>http://github.com/SimonCropp/NaughtyStrings</PackageProjectUrl>
     <PackageOutputPath>..\nugets</PackageOutputPath>
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludePDBsInPackage</TargetsForTfmSpecificContentInPackage>
