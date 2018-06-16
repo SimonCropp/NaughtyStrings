@@ -22,26 +22,76 @@ public class Sync
     [Fact]
     public async Task SyncNaughtyStrings()
     {
-        var path = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "../../../../NaughtyStrings/AllNaughtyStrings.cs"));
-        File.Delete(path);
-        using (var fileStream = File.Open(path, FileMode.Create))
-            using (var writer = new StreamWriter(fileStream, Encoding.Unicode))
-        using (var provider = CodeDomProvider.CreateProvider("CSharp"))
-        {
-            await Inner(writer, provider);
-        }
-    }
-
-    async Task Inner(StreamWriter writer, CodeDomProvider provider)
-    {
         var httpClient = new HttpClient();
         var content = await httpClient.GetStringAsync("https://raw.githubusercontent.com/minimaxir/big-list-of-naughty-strings/master/blns.txt");
 
         var categories = Parse(content).ToList();
-        writer.WriteLine(@"
+
+        var naughtyStringsPath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "../../../../NaughtyStrings/TheNaughtyStrings.cs"));
+        File.Delete(naughtyStringsPath);
+        using (var provider = CodeDomProvider.CreateProvider("CSharp"))
+        using (var stream = File.Open(naughtyStringsPath, FileMode.Create))
+        using (var writer = new StreamWriter(stream, Encoding.Unicode))
+        {
+            WriteNaughtyStrings(writer, provider, categories);
+        }
+
+        var bogusPath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "../../../../NaughtyStrings.Bogus/Naughty.cs"));
+        File.Delete(bogusPath);
+        using (var stream = File.Open(bogusPath, FileMode.Create))
+        using (var writer = new StreamWriter(stream, Encoding.Unicode))
+        {
+            WriteBogus(writer, categories);
+        }
+    }
+
+    static void WriteBogus(StreamWriter writer, List<Category> categories)
+    {
+        writer.WriteLine(@"using Bogus;
 using System.Collections.Generic;
 
+namespace NaughtyStrings.Bogus
+{
+    public class Naughty : DataSet
+    {
+        /// <summary>
+        /// All naughty strings.
+        /// </summary>
+        public static IEnumerable<string> Strings(int num = 1)
+        {
+            return TheNaughtyStrings.All.PickRandom(num);
+        }");
+
+        foreach (var category in categories)
+        {
+            WriteList2(writer, category.Title, category.Description);
+        }
+
+        writer.WriteLine(@"
+    }
+}");
+    }
+
+    static void WriteList2(StreamWriter writer, string name, string comment)
+    {
+        writer.WriteLine($@"
+        /// <summary>
+        /// {comment}
+        /// </summary>
+        public static IEnumerable<string> {name}(int num = 1)
+        {{
+            return TheNaughtyStrings.{name}.PickRandom(num);
+        }}");
+    }
+
+    static void WriteNaughtyStrings(StreamWriter writer, CodeDomProvider provider, List<Category> categories)
+    {
+        writer.WriteLine(@"using System.Collections.Generic;
+
 namespace NaughtyStrings
+#if Bogus
+.Bogus
+#endif
 {
     public static class TheNaughtyStrings
     {");
@@ -49,15 +99,19 @@ namespace NaughtyStrings
         var lines = categories.SelectMany(x => x.Lines);
         WriteList(writer, provider, "All", "All naughty strings.", lines);
 
+        foreach (var category in categories)
+        {
+            WriteList(writer, provider, category.Title, category.Description, category.Lines);
+        }
+
         writer.WriteLine(@"
     }
 }");
     }
 
-    static void WriteList(StreamWriter writer, CodeDomProvider provider, string name,string comment, IEnumerable<string> lines)
+    static void WriteList(StreamWriter writer, CodeDomProvider provider, string name, string comment, IEnumerable<string> lines)
     {
         writer.WriteLine($@"
-
         /// <summary>
         /// {comment}
         /// </summary>
@@ -67,8 +121,8 @@ namespace NaughtyStrings
         {
             WriteLine(writer, provider, line);
         }
-        writer.WriteLine(@"
-        };");
+
+        writer.WriteLine(@"        };");
     }
 
     private static void WriteLine(StreamWriter writer, CodeDomProvider provider, string line)
@@ -85,14 +139,19 @@ namespace NaughtyStrings
 
     IEnumerable<Category> Parse(string content)
     {
-        var strings = content.Split(new[]{  "\n\n#\t"}, StringSplitOptions.None);
+        var strings = content.Split(new[] {"\n\n#\t"}, StringSplitOptions.None);
         foreach (var group in strings)
         {
             var lines = group.Split('\n');
             yield return new Category
             {
-                Title = TrimHash(lines[0]),
-                Description = string.Concat(lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash)),
+                Title = TrimHash(lines[0])
+                    .Replace(" ", "")
+                    .Replace("/", "")
+                    .Replace("-", "")
+                    .Replace(")", "")
+                    .Replace("(", ""),
+                Description = string.Join(" ",lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash)),
                 Lines = lines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList(),
             };
         }

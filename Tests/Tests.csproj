@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NaughtyStrings.Bogus\NaughtyStrings.Bogus.csproj" />
-    <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />
+    <!--<ProjectReference Include="..\NaughtyStrings.Bogus\NaughtyStrings.Bogus.csproj" />
+    <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />-->
   </ItemGroup>
 
   <ItemGroup>
