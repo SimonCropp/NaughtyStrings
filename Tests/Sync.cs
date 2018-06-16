@@ -37,31 +37,50 @@ public class Sync
         var httpClient = new HttpClient();
         var content = await httpClient.GetStringAsync("https://raw.githubusercontent.com/minimaxir/big-list-of-naughty-strings/master/blns.txt");
 
+        var categories = Parse(content).ToList();
         writer.WriteLine(@"
 using System.Collections.Generic;
 
 namespace NaughtyStrings
 {
     public static class TheNaughtyStrings
-    {
-        public static IReadOnlyList<string> All = new List<string>
-        {");
-        var categories = Parse(content).ToList();
-        foreach (var line in categories.SelectMany(x => x.Lines))
-        {
-            writer.Write("            ");
-            if (line.StartsWith("\t"))
-            {
-                writer.Write("@");
-            }
-            provider.GenerateCodeFromExpression(new CodePrimitiveExpression(line), writer, null);
-            writer.WriteLine(",");
-        }
+    {");
+
+        var lines = categories.SelectMany(x => x.Lines);
+        WriteList(writer, provider, "All", "All naughty strings.", lines);
 
         writer.WriteLine(@"
-        };
     }
 }");
+    }
+
+    static void WriteList(StreamWriter writer, CodeDomProvider provider, string name,string comment, IEnumerable<string> lines)
+    {
+        writer.WriteLine($@"
+
+        /// <summary>
+        /// {comment}
+        /// </summary>
+        public static IReadOnlyList<string> {name} = new List<string>
+        {{");
+        foreach (var line in lines)
+        {
+            WriteLine(writer, provider, line);
+        }
+        writer.WriteLine(@"
+        };");
+    }
+
+    private static void WriteLine(StreamWriter writer, CodeDomProvider provider, string line)
+    {
+        writer.Write("            ");
+        if (line.StartsWith("\t"))
+        {
+            writer.Write("@");
+        }
+
+        provider.GenerateCodeFromExpression(new CodePrimitiveExpression(line), writer, null);
+        writer.WriteLine(",");
     }
 
     IEnumerable<Category> Parse(string content)
