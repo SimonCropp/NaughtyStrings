@@ -1,13 +1,46 @@
 # NaughtyStrings
 
+Provides a strong typed .NET API for [big-list-of-naughty-strings](https://github.com/minimaxir/big-list-of-naughty-strings)
 
 
+## NaughtyStrings
 
-## The NuGet package [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings/)
+
+### The NuGet packages[![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings/)
 
 https://nuget.org/packages/NaughtyStrings/
 
     PM> Install-Package NaughtyStrings
+
+
+### Usage
+
+The entry type is a static class `TheNaughtyStrings`. It exposes all string via `TheNaughtyStrings.All` and individual categories by name:
+
+```csharp
+var items = TheNaughtyStrings.All.Take(10);
+var emoji = TheNaughtyStrings.Emoji.Take(10);
+```
+
+## NaughtyStrings.Bogus
+
+
+### NaughtyStrings.Bogus [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
+
+https://nuget.org/packages/NaughtyStrings.Bogus/
+
+    PM> Install-Package NaughtyStrings.Bogus
+
+
+### Usage
+
+```csharp
+var faker = new Faker<Target>()
+    .RuleFor(u => u.Property, (f, u) => f.Naughty().String());
+
+var target = faker.Generate();
+Debug.WriteLine(target.Property);
+```
 
 
 ## Icon

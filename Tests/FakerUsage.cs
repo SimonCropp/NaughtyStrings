@@ -1,4 +1,5 @@
-﻿using Bogus;
+﻿using System.Diagnostics;
+using Bogus;
 using Xunit;
 using Xunit.Abstractions;
 
@@ -14,11 +15,11 @@ public class FakerUsage
     [Fact]
     public void Run()
     {
-        var testUsers = new Faker<Target>()
+        var faker = new Faker<Target>()
             .RuleFor(u => u.Property, (f, u) => f.Naughty().String());
 
-        var user = testUsers.Generate();
-        output.WriteLine(user.Property);
+        var target = faker.Generate();
+        Debug.WriteLine(target.Property);
     }
 
     public class Target
