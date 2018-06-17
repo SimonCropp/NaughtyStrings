@@ -46,8 +46,7 @@ Debug.WriteLine(target.Property2);
 
 ## Usage in Xunit
 
-The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See  [Creating parameterised tests in xUnit with [InlineData], [ClassData], and [MemberData]
-](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [xUnit Theory: Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
+The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See  [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
 ```csharp
 public class XunitUsage
