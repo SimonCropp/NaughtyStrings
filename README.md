@@ -44,6 +44,44 @@ Debug.WriteLine(target.Property2);
 ```
 
 
+## Usage in Xunit
+
+The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See  [Creating parameterised tests in xUnit with [InlineData], [ClassData], and [MemberData]
+](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [xUnit Theory: Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
+
+```csharp
+public class XunitUsage
+{
+    ITestOutputHelper output;
+
+    public XunitUsage(ITestOutputHelper output)
+    {
+        this.output = output;
+    }
+
+    [Theory]
+    [MemberData(
+        memberName: nameof(NaughtyDataProvider.GetData),
+        MemberType = typeof(NaughtyDataProvider))]
+    public void Run(string naughtyString)
+    {
+        output.WriteLine(naughtyString);
+    }
+}
+
+public class NaughtyDataProvider
+{
+    public static IEnumerable<object[]> GetData()
+    {
+        foreach (var naughtyString in TheNaughtyStrings.All)
+        {
+            yield return new object[] { naughtyString };
+        }
+    }
+}
+```
+
+
 ## Icon
 
 <a href="https://thenounproject.com/term/naughty/1777956/" target="_blank">Naughty</a> designed by <a href="https://thenounproject.com/AomAm/" target="_blank">AomAm</a> from The Noun Project
