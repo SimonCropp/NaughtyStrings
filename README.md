@@ -3,10 +3,7 @@
 Provides a strong typed .NET API for [big-list-of-naughty-strings](https://github.com/minimaxir/big-list-of-naughty-strings)
 
 
-## NaughtyStrings
-
-
-### The NuGet packages [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings/)
+## NaughtyStrings  [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings/)
 
 https://nuget.org/packages/NaughtyStrings/
 
@@ -22,12 +19,9 @@ var items = TheNaughtyStrings.All.Take(10);
 var emoji = TheNaughtyStrings.Emoji.Take(10);
 ```
 
-## NaughtyStrings.Bogus
+## NaughtyStrings.Bogus [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
 
 Extends [Bogus](https://github.com/bchavez/Bogus) to use Naughty Strings.
-
-
-### NaughtyStrings.Bogus [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
 
 https://nuget.org/packages/NaughtyStrings.Bogus/
 
@@ -52,8 +46,4 @@ Debug.WriteLine(target.Property2);
 
 ## Icon
 
-
 <a href="https://thenounproject.com/term/naughty/1777956/" target="_blank">Naughty</a> designed by <a href="https://thenounproject.com/AomAm/" target="_blank">AomAm</a> from The Noun Project
-
-Lock by from the Noun Project
-
