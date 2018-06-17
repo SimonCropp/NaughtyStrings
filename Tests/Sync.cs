@@ -59,14 +59,19 @@ namespace NaughtyStrings.Bogus
         /// </summary>
         public IEnumerable<string> Strings(int num = 1)
         {
-            return TheNaughtyStrings.All.PickRandom(num);
+            for (var i = 0; i < num; i++)
+            {
+                yield return String();
+            }
         }
+
         /// <summary>
         /// A naughty string.
         /// </summary>
         public string String()
         {
-            return TheNaughtyStrings.All.PickRandom();
+            var index = Random.Number(TheNaughtyStrings.All.Count-1);
+            return TheNaughtyStrings.All[index];
         }");
 
         foreach (var category in categories)
@@ -87,7 +92,10 @@ namespace NaughtyStrings.Bogus
         /// </summary>
         public IEnumerable<string> {name}(int num = 1)
         {{
-            return TheNaughtyStrings.{name}.PickRandom(num);
+            for (var i = 0; i < num; i++)
+            {{
+                yield return {name}();
+            }}
         }}
 
         /// <summary>
@@ -95,7 +103,8 @@ namespace NaughtyStrings.Bogus
         /// </summary>
         public string {name}()
         {{
-            return TheNaughtyStrings.{name}.PickRandom();
+            var index = Random.Number(TheNaughtyStrings.{name}.Count-1);
+            return TheNaughtyStrings.{name}[index];
         }}");
     }
 
