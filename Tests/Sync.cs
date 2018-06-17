@@ -59,6 +59,7 @@ namespace NaughtyStrings.Bogus
         /// </summary>
         public IEnumerable<string> Strings(int num = 1)
         {
+            Guard.AgainstNegative(num, nameof(num));
             for (var i = 0; i < num; i++)
             {
                 yield return String();
@@ -92,6 +93,7 @@ namespace NaughtyStrings.Bogus
         /// </summary>
         public IEnumerable<string> {name}(int num = 1)
         {{
+            Guard.AgainstNegative(num, nameof(num));
             for (var i = 0; i < num; i++)
             {{
                 yield return {name}();
