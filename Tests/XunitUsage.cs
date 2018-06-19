@@ -1,24 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using NaughtyStrings;
 using Xunit;
-using Xunit.Abstractions;
 
 public class XunitUsage
 {
-    ITestOutputHelper output;
-
-    public XunitUsage(ITestOutputHelper output)
-    {
-        this.output = output;
-    }
-
     [Theory]
     [MemberData(
         memberName: nameof(NaughtyDataProvider.GetData),
         MemberType = typeof(NaughtyDataProvider))]
     public void Run(string naughtyString)
     {
-        output.WriteLine(naughtyString);
+        Debug.WriteLine(naughtyString);
     }
 }
 
