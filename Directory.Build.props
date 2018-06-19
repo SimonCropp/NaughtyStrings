@@ -4,7 +4,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <LangVersion>latest</LangVersion>
     <NoWarn>CS1591</NoWarn>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <AssemblyVersion>1.0</AssemblyVersion>
     <AssemblyInformationalVersion>$(Version)</AssemblyInformationalVersion>
     <Authors>Simon Cropp</Authors>
@@ -16,6 +16,8 @@
     <PackageProjectUrl>http://github.com/SimonCropp/NaughtyStrings</PackageProjectUrl>
     <PackageOutputPath>..\nugets</PackageOutputPath>
     <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);IncludePDBsInPackage</TargetsForTfmSpecificContentInPackage>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
   </PropertyGroup>
 
   <Target Name="IncludePDBsInPackage" Condition="'$(IncludeBuildOutput)' != 'false'">

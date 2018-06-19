@@ -7,4 +7,8 @@
     <Description>Exposes Naughty Strings (https://github.com/minimaxir/big-list-of-naughty-strings) to .NET.</Description>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-62925-02" PrivateAssets="All" />
+  </ItemGroup>
+
 </Project>

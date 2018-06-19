@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="22.1.3" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta-62925-02" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
