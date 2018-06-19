@@ -71,7 +71,7 @@ namespace NaughtyStrings.Bogus
         /// </summary>
         public string String()
         {
-            var index = Random.Number(TheNaughtyStrings.All.Count-1);
+            var index = Random.Number(TheNaughtyStrings.All.Count - 1);
             return TheNaughtyStrings.All[index];
         }");
 
@@ -105,7 +105,7 @@ namespace NaughtyStrings.Bogus
         /// </summary>
         public string {name}()
         {{
-            var index = Random.Number(TheNaughtyStrings.{name}.Count-1);
+            var index = Random.Number(TheNaughtyStrings.{name}.Count - 1);
             return TheNaughtyStrings.{name}[index];
         }}");
     }
@@ -177,7 +177,7 @@ namespace NaughtyStrings
                     .Replace("-", "")
                     .Replace(")", "")
                     .Replace("(", ""),
-                Description = string.Join(" ",lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash)),
+                Description = string.Join(" ", lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash)),
                 Lines = lines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList(),
             };
         }
@@ -187,5 +187,4 @@ namespace NaughtyStrings
     {
         return s.TrimStart('#').Trim();
     }
-
 }
