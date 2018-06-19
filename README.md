@@ -68,39 +68,41 @@ Debug.WriteLine(target.Property2);
 ```
 
 
-## Usage in Xunit
+## Usage in [Xunit](https://xunit.github.io/)
 
-The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See  [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
+The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
 ```csharp
-public class XunitUsage
+[Theory]
+[MemberData(nameof(GetData))]
+public void Run(string naughtyString)
 {
-    ITestOutputHelper output;
-
-    public XunitUsage(ITestOutputHelper output)
-    {
-        this.output = output;
-    }
-
-    [Theory]
-    [MemberData(
-        memberName: nameof(NaughtyDataProvider.GetData),
-        MemberType = typeof(NaughtyDataProvider))]
-    public void Run(string naughtyString)
-    {
-        output.WriteLine(naughtyString);
-    }
+    Debug.WriteLine(naughtyString);
 }
 
-public class NaughtyDataProvider
+public static IEnumerable<object[]> GetData()
 {
-    public static IEnumerable<object[]> GetData()
-    {
-        foreach (var naughtyString in TheNaughtyStrings.All)
-        {
-            yield return new object[] { naughtyString };
-        }
-    }
+    return TheNaughtyStrings.All
+        .Select(_ => new object[] {_});
+}
+```
+
+
+## Usage in [NUnit](http://nunit.org/)
+
+The below example uses the `TestCaseSource` to consume all naughty strings from a helper class. See [TestCaseData](https://github.com/nunit/docs/wiki/TestCaseData) for more information.
+
+```csharp
+[Test, TestCaseSource(nameof(GetData))]
+public void Run(string naughtyString)
+{
+    Debug.WriteLine(naughtyString);
+}
+
+static IEnumerable GetData
+{
+    get => TheNaughtyStrings.All
+        .Select(_ => new TestCaseData(_));
 }
 ```
 
