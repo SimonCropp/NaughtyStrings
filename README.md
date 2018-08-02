@@ -1,6 +1,6 @@
 # NaughtyStrings
 
-Provides a strong typed .NET API for the [big-list-of-naughty-strings](https://github.com/minimaxir/big-list-of-naughty-strings)
+Provides a strong typed .NET API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings)
 
 Some example strings:
 
