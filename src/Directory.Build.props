@@ -12,7 +12,7 @@
     <PackageTags>NaughtyStrings, Bogus</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/NaughtyStrings/master/icon.png</PackageIconUrl>
     <PackageProjectUrl>http://github.com/SimonCropp/NaughtyStrings</PackageProjectUrl>
-    <PackageOutputPath>..\nugets</PackageOutputPath>
+    <PackageOutputPath>..\..\nugets</PackageOutputPath>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <DebugType>embedded</DebugType>
     <DebugSymbols>true</DebugSymbols>
