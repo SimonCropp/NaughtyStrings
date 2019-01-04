@@ -137,6 +137,10 @@ namespace NaughtyStrings
 
     static void WriteList(StreamWriter writer, CodeDomProvider provider, string name, string comment, IEnumerable<string> lines)
     {
+        if (!comment.EndsWith("."))
+        {
+            comment += ".";
+        }
         writer.WriteLine($@"
         /// <summary>
         /// {comment}
@@ -148,7 +152,7 @@ namespace NaughtyStrings
             WriteLine(writer, provider, line);
         }
 
-        writer.WriteLine(@"        };");
+        writer.WriteLine("        };");
     }
 
     private static void WriteLine(StreamWriter writer, CodeDomProvider provider, string line)
