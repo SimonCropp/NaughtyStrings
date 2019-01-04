@@ -1,6 +1,6 @@
 version: 1.0.{build}
 image: Visual Studio 2017
-configuration: Release
-platform: Any CPU
+build_script:
+- cmd: dotnet build src --configuration Release
 artifacts:
 - path: nugets\**\*.nupkg
