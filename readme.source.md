@@ -40,13 +40,7 @@ https://nuget.org/packages/NaughtyStrings/
 
 The entry type is a static class `TheNaughtyStrings`. It exposes all strings via `TheNaughtyStrings.All` and individual categories by name:
 
-<!-- snippet: usage -->
-```cs
-var items = TheNaughtyStrings.All.Take(10);
-var emoji = TheNaughtyStrings.Emoji.Take(10);
-```
-<sup>[snippet source](/src/Tests/Usage.cs#L10-L15)</sup>
-<!-- endsnippet -->
+snippet: usage
 
 
 ## NaughtyStrings.Bogus [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
@@ -63,86 +57,28 @@ https://nuget.org/packages/NaughtyStrings.Bogus/
 
 The entry extension method is `Naughty()`. It exposes all strings via `.String()` and individual categories by name:
 
-<!-- snippet: bogususage -->
-```cs
-var faker = new Faker<Target>()
-    .RuleFor(u => u.Property1, (f, u) => f.Naughty().String())
-    .RuleFor(u => u.Property2, (f, u) => f.Naughty().Emoji());
-
-var target = faker.Generate();
-Debug.WriteLine(target.Property1);
-Debug.WriteLine(target.Property2);
-```
-<sup>[snippet source](/src/Tests/Usage.cs#L16-L26)</sup>
-<!-- endsnippet -->
+snippet: bogususage
 
 
 ## Usage in [Xunit](https://xunit.github.io/)
 
 The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
-<!-- snippet: xUnitUsage -->
-```cs
-[Theory]
-[MemberData(nameof(GetData))]
-public void Run(string naughtyString)
-{
-    Debug.WriteLine(naughtyString);
-}
-
-public static IEnumerable<object[]> GetData()
-{
-    return TheNaughtyStrings.All
-        .Select(naughty => new object[] {naughty});
-}
-```
-<sup>[snippet source](/src/Tests/XunitUsage.cs#L9-L22)</sup>
-<!-- endsnippet -->
+snippet: xUnitUsage
 
 
 ## Usage in [NUnit](http://nunit.org/)
 
 The below example uses the `TestCaseSource` to consume all naughty strings from a helper class. See [TestCaseData](https://github.com/nunit/docs/wiki/TestCaseData) for more information.
 
-<!-- snippet: NUnitUsage -->
-```cs
-[Test, TestCaseSource(nameof(GetData))]
-public void Run(string naughtyString)
-{
-    Debug.WriteLine(naughtyString);
-}
-
-static IEnumerable GetData
-{
-    get => TheNaughtyStrings.All
-        .Select(naughty => new TestCaseData(naughty));
-}
-```
-<sup>[snippet source](/src/Tests/NUnitUsage.cs#L10-L24)</sup>
-<!-- endsnippet -->
+snippet: NUnitUsage
 
 
 ## Usage in [MSTest](https://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework)
 
 The below example uses the `DynamicData` to consume all naughty strings from a helper class. See [DynamicData](https://www.meziantou.net/2018/02/05/mstest-v2-data-tests) for more information.
 
-<!-- snippet: MsTestUsage -->
-```cs
-[TestMethod]
-[DynamicData(nameof(GetData))]
-public void Run(string naughtyString)
-{
-    Debug.WriteLine(naughtyString);
-}
-
-static IEnumerable<object[]> GetData()
-{
-    return TheNaughtyStrings.All
-        .Select(naughty => new object[] {naughty});
-}
-```
-<sup>[snippet source](/src/Tests/MsTestUsage.cs#L10-L23)</sup>
-<!-- endsnippet -->
+snippet: MsTestUsage
 
 
 ## Icon

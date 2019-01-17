@@ -7,6 +7,7 @@ using NaughtyStrings;
 [TestClass]
 public class MsTestUsage
 {
+    #region MsTestUsage
     [TestMethod]
     [DynamicData(nameof(GetData))]
     public void Run(string naughtyString)
@@ -17,6 +18,7 @@ public class MsTestUsage
     static IEnumerable<object[]> GetData()
     {
         return TheNaughtyStrings.All
-            .Select(_ => new object[] {_});
+            .Select(naughty => new object[] {naughty});
     }
+    #endregion
 }

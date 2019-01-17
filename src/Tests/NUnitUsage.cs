@@ -7,6 +7,8 @@ using NUnit.Framework;
 [TestFixture]
 public class NUnitUsage
 {
+    #region NUnitUsage
+
     [Test, TestCaseSource(nameof(GetData))]
     public void Run(string naughtyString)
     {
@@ -16,6 +18,8 @@ public class NUnitUsage
     static IEnumerable GetData
     {
         get => TheNaughtyStrings.All
-            .Select(_ => new TestCaseData(_));
+            .Select(naughty => new TestCaseData(naughty));
     }
+
+    #endregion
 }

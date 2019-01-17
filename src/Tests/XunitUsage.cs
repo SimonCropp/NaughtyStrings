@@ -6,6 +6,7 @@ using Xunit;
 
 public class XunitUsage
 {
+    #region xUnitUsage
     [Theory]
     [MemberData(nameof(GetData))]
     public void Run(string naughtyString)
@@ -16,6 +17,7 @@ public class XunitUsage
     public static IEnumerable<object[]> GetData()
     {
         return TheNaughtyStrings.All
-            .Select(_ => new object[] {_});
+            .Select(naughty => new object[] {naughty});
     }
+    #endregion
 }

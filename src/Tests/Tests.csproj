@@ -12,15 +12,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="CaptureSnippetsSimple" Version="8.0.0" />
     <ProjectReference Include="..\NaughtyStrings.Bogus\NaughtyStrings.Bogus.csproj" />
     <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-
     <Reference Include="System.Net.Http" />
   </ItemGroup>
 

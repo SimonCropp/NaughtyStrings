@@ -8,17 +8,9 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
-using Xunit.Abstractions;
 
 public class Sync
 {
-    ITestOutputHelper output;
-
-    public Sync(ITestOutputHelper output)
-    {
-        this.output = output;
-    }
-
     [Fact]
     public async Task SyncNaughtyStrings()
     {
