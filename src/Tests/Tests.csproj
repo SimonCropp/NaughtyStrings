@@ -12,7 +12,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="MarkdownSnippets" Version="8.7.0" />
+    <PackageReference Include="MarkdownSnippets" Version="8.7.1" />
     <ProjectReference Include="..\NaughtyStrings.Bogus\NaughtyStrings.Bogus.csproj" />
     <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />
     <Reference Include="System.Net.Http" />
