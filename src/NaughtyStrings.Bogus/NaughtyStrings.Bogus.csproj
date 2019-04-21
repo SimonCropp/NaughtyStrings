@@ -1,23 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild Condition="'$(Configuration)'=='Release'">true</GeneratePackageOnBuild>
     <GenerateDocumentationFile Condition="'$(Configuration)'=='Release'">true</GenerateDocumentationFile>
     <Description>Extends Bogus (https://github.com/bchavez/Bogus) to use Naughty Strings (https://github.com/minimaxir/big-list-of-naughty-strings).</Description>
-  </PropertyGroup>
-
-  <PropertyGroup>
     <DefineConstants>$(DefineConstants);Bogus</DefineConstants>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Include="..\NaughtyStrings\TheNaughtyStrings.cs" Link="TheNaughtyStrings.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="Bogus" Version="26.0.2" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-18618-05" PrivateAssets="All" />
   </ItemGroup>
-
 </Project>

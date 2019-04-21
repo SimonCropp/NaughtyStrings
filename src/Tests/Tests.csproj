@@ -1,9 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
     <PackageReference Include="NUnit" Version="3.11.0" />
@@ -14,5 +12,4 @@
     <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />
     <Reference Include="System.Net.Http" />
   </ItemGroup>
-
 </Project>
