@@ -11,7 +11,7 @@
     <Copyright>Copyright $([System.DateTime]::UtcNow.ToString(yyyy)). All rights reserved</Copyright>
     <PackageTags>NaughtyStrings, Bogus</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/SimonCropp/NaughtyStrings/master/icon.png</PackageIconUrl>
-    <PackageProjectUrl>http://github.com/SimonCropp/NaughtyStrings</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/SimonCropp/NaughtyStrings</PackageProjectUrl>
     <PackageOutputPath>..\..\nugets</PackageOutputPath>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <DebugType>embedded</DebugType>
