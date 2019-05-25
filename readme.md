@@ -27,7 +27,7 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 ```
 
 
-## NaughtyStrings  [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings/)
+## NaughtyStrings  [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg)](https://www.nuget.org/packages/NaughtyStrings/)
 
 https://nuget.org/packages/NaughtyStrings/
 
@@ -47,7 +47,7 @@ var emoji = TheNaughtyStrings.Emoji.Take(10);
 <!-- endsnippet -->
 
 
-## NaughtyStrings.Bogus [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?style=flat)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
+## NaughtyStrings.Bogus [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
 
 Extends [Bogus](https://github.com/bchavez/Bogus) to use Naughty Strings.
 
