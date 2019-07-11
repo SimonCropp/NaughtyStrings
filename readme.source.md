@@ -27,11 +27,9 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 ```
 
 
-## NaughtyStrings  [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg)](https://www.nuget.org/packages/NaughtyStrings/)
+## NaughtyStrings [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg)](https://www.nuget.org/packages/NaughtyStrings/)
 
 https://nuget.org/packages/NaughtyStrings/
-
-    PM> Install-Package NaughtyStrings
 
 
 ### Usage
@@ -46,8 +44,6 @@ snippet: usage
 Extends [Bogus](https://github.com/bchavez/Bogus) to use Naughty Strings.
 
 https://nuget.org/packages/NaughtyStrings.Bogus/
-
-    PM> Install-Package NaughtyStrings.Bogus
 
 
 ### Usage

@@ -37,8 +37,6 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 
 https://nuget.org/packages/NaughtyStrings/
 
-    PM> Install-Package NaughtyStrings
-
 
 ### Usage
 
@@ -58,8 +56,6 @@ var emoji = TheNaughtyStrings.Emoji.Take(10);
 Extends [Bogus](https://github.com/bchavez/Bogus) to use Naughty Strings.
 
 https://nuget.org/packages/NaughtyStrings.Bogus/
-
-    PM> Install-Package NaughtyStrings.Bogus
 
 
 ### Usage
