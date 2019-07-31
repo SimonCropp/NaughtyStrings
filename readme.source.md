@@ -1,6 +1,6 @@
 # NaughtyStrings
 
-Provides a strong typed .NET API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings)
+Provides a strong typed .NET API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings).
 
 Some example strings:
 
@@ -54,7 +54,7 @@ The entry extension method is `Naughty()`. It exposes all strings via `.String()
 snippet: bogususage
 
 
-## Usage in [Xunit](https://xunit.github.io/)
+## Usage in [xUnit](https://xunit.github.io/)
 
 The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
