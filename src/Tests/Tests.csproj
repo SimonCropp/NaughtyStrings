@@ -9,7 +9,7 @@
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="15.1.1" />
+    <PackageReference Include="MarkdownSnippets.MsBuild" Version="16.0.0" />
     <ProjectReference Include="..\NaughtyStrings.Bogus\NaughtyStrings.Bogus.csproj" />
     <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />
     <Reference Include="System.Net.Http" />
