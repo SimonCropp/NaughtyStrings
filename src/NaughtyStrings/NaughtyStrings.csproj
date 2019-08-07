@@ -4,6 +4,6 @@
     <Description>Exposes Naughty Strings (https://github.com/minimaxir/big-list-of-naughty-strings) to .NET.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="ProjectDefaults" Version="1.0.7" PrivateAssets="All" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.8" PrivateAssets="All" />
   </ItemGroup>
 </Project>
