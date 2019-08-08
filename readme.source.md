@@ -26,10 +26,12 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 `⁄€‹›ﬁﬂ‡°·‚—±
 ```
 
+toc
 
-## NaughtyStrings [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg)](https://www.nuget.org/packages/NaughtyStrings/)
 
-https://nuget.org/packages/NaughtyStrings/
+## NaughtyStrings
+
+https://nuget.org/packages/NaughtyStrings/ [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg)](https://www.nuget.org/packages/NaughtyStrings/)
 
 
 ### Usage
@@ -39,11 +41,11 @@ The entry type is a static class `TheNaughtyStrings`. It exposes all strings via
 snippet: usage
 
 
-## NaughtyStrings.Bogus [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
+## NaughtyStrings.Bogus
 
 Extends [Bogus](https://github.com/bchavez/Bogus) to use Naughty Strings.
 
-https://nuget.org/packages/NaughtyStrings.Bogus/
+https://nuget.org/packages/NaughtyStrings.Bogus/ [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
 
 
 ### Usage
@@ -77,4 +79,4 @@ snippet: MsTestUsage
 
 ## Icon
 
-<a href="https://thenounproject.com/term/naughty/1777956/" target="_blank">Naughty</a> designed by <a href="https://thenounproject.com/AomAm/" target="_blank">AomAm</a> from The Noun Project
+[Naughty](https://thenounproject.com/term/naughty/1777956/) designed by [AomAm](https://thenounproject.com/AomAm/) from [The Noun Project](https://thenounproject.com).
