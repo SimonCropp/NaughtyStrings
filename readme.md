@@ -5,7 +5,7 @@ Source File: /readme.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-# NaughtyStrings
+# <img src="/src/icon.png" height="40px"> NaughtyStrings
 
 Provides a strong typed .NET API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings).
 
@@ -58,11 +58,12 @@ https://nuget.org/packages/NaughtyStrings/ [![NuGet Status](http://img.shields.i
 The entry type is a static class `TheNaughtyStrings`. It exposes all strings via `TheNaughtyStrings.All` and individual categories by name:
 
 <!-- snippet: usage -->
+<a id='snippet-usage'/></a>
 ```cs
 var items = TheNaughtyStrings.All.Take(10);
 var emoji = TheNaughtyStrings.Emoji.Take(10);
 ```
-<sup>[snippet source](/src/Tests/Usage.cs#L10-L15)</sup>
+<sup>[snippet source](/src/Tests/Usage.cs#L10-L15) / [anchor](#snippet-usage)</sup>
 <!-- endsnippet -->
 
 
@@ -79,6 +80,7 @@ https://nuget.org/packages/NaughtyStrings.Bogus/ [![NuGet Status](http://img.shi
 The entry extension method is `Naughty()`. It exposes all strings via `.String()` and individual categories by name:
 
 <!-- snippet: bogususage -->
+<a id='snippet-bogususage'/></a>
 ```cs
 var faker = new Faker<Target>()
     .RuleFor(u => u.Property1, (f, u) => f.Naughty().String())
@@ -88,7 +90,7 @@ var target = faker.Generate();
 Debug.WriteLine(target.Property1);
 Debug.WriteLine(target.Property2);
 ```
-<sup>[snippet source](/src/Tests/Usage.cs#L16-L26)</sup>
+<sup>[snippet source](/src/Tests/Usage.cs#L16-L26) / [anchor](#snippet-bogususage)</sup>
 <!-- endsnippet -->
 
 
@@ -97,6 +99,7 @@ Debug.WriteLine(target.Property2);
 The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
 <!-- snippet: xUnitUsage -->
+<a id='snippet-xunitusage'/></a>
 ```cs
 [Theory]
 [MemberData(nameof(GetData))]
@@ -111,7 +114,7 @@ public static IEnumerable<object[]> GetData()
         .Select(naughty => new object[] {naughty});
 }
 ```
-<sup>[snippet source](/src/Tests/XunitUsage.cs#L9-L22)</sup>
+<sup>[snippet source](/src/Tests/XunitUsage.cs#L9-L22) / [anchor](#snippet-xunitusage)</sup>
 <!-- endsnippet -->
 
 
@@ -120,6 +123,7 @@ public static IEnumerable<object[]> GetData()
 The below example uses the `TestCaseSource` to consume all naughty strings from a helper class. See [TestCaseData](https://github.com/nunit/docs/wiki/TestCaseData) for more information.
 
 <!-- snippet: NUnitUsage -->
+<a id='snippet-nunitusage'/></a>
 ```cs
 [Test, TestCaseSource(nameof(GetData))]
 public void Run(string naughtyString)
@@ -133,7 +137,7 @@ static IEnumerable GetData
         .Select(naughty => new TestCaseData(naughty));
 }
 ```
-<sup>[snippet source](/src/Tests/NUnitUsage.cs#L10-L24)</sup>
+<sup>[snippet source](/src/Tests/NUnitUsage.cs#L10-L24) / [anchor](#snippet-nunitusage)</sup>
 <!-- endsnippet -->
 
 
@@ -142,6 +146,7 @@ static IEnumerable GetData
 The below example uses the `DynamicData` to consume all naughty strings from a helper class. See [DynamicData](https://www.meziantou.net/2018/02/05/mstest-v2-data-tests) for more information.
 
 <!-- snippet: MsTestUsage -->
+<a id='snippet-mstestusage'/></a>
 ```cs
 [TestMethod]
 [DynamicData(nameof(GetData))]
@@ -156,7 +161,7 @@ static IEnumerable<object[]> GetData()
         .Select(naughty => new object[] {naughty});
 }
 ```
-<sup>[snippet source](/src/Tests/MsTestUsage.cs#L10-L23)</sup>
+<sup>[snippet source](/src/Tests/MsTestUsage.cs#L10-L23) / [anchor](#snippet-mstestusage)</sup>
 <!-- endsnippet -->
 
 

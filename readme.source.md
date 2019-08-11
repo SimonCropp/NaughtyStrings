@@ -1,4 +1,4 @@
-# NaughtyStrings
+# <img src="/src/icon.png" height="40px"> NaughtyStrings
 
 Provides a strong typed .NET API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings).
 
