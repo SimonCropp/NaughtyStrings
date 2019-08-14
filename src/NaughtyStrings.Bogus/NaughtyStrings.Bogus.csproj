@@ -9,7 +9,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Bogus" Version="28.0.2" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.16" PrivateAssets="All" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.17" PrivateAssets="All" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-19367-01" PrivateAssets="All" />
   </ItemGroup>
 </Project>
