@@ -5,7 +5,11 @@ Source File: /readme.source.md
 To change this file edit the source file and then run MarkdownSnippets.
 -->
 
-# <img src="/src/icon.png" height="40px"> NaughtyStrings
+# <img src="/src/icon.png" height="30px"> NaughtyStrings
+
+[![Build status](https://ci.appveyor.com/api/projects/status/3tyay4ixlsgf2rcj/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NaughtyStrings)
+[![NuGet Status](https://img.shields.io/nuget/v/NaughtyStrings.svg?label=NaughtyStrings&cacheSeconds=86400)](https://www.nuget.org/packages/NaughtyStrings/)
+[![NuGet Status](https://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?label=NaughtyStrings.Bogus&cacheSeconds=86400)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
 
 Provides a strong typed .NET API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings).
 
@@ -43,14 +47,13 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
   * [Usage in xUnit](#usage-in-xunit)
   * [Usage in NUnit](#usage-in-nunit)
   * [Usage in MSTest](#usage-in-mstest)
-  * [Icon](#icon)
 <!-- endtoc -->
 
 
 
 ## NaughtyStrings
 
-https://nuget.org/packages/NaughtyStrings/ [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg)](https://www.nuget.org/packages/NaughtyStrings/)
+https://nuget.org/packages/NaughtyStrings/
 
 
 ### Usage
@@ -71,7 +74,7 @@ var emoji = TheNaughtyStrings.Emoji.Take(10);
 
 Extends [Bogus](https://github.com/bchavez/Bogus) to use Naughty Strings.
 
-https://nuget.org/packages/NaughtyStrings.Bogus/ [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
+https://nuget.org/packages/NaughtyStrings.Bogus/
 
 
 ### Usage
@@ -163,6 +166,11 @@ static IEnumerable<object[]> GetData()
 ```
 <sup>[snippet source](/src/Tests/MsTestUsage.cs#L10-L23) / [anchor](#snippet-mstestusage)</sup>
 <!-- endsnippet -->
+
+
+## Release Notes
+
+See [closed milestones](../../milestones?state=closed).
 
 
 ## Icon

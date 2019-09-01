@@ -1,4 +1,8 @@
-# <img src="/src/icon.png" height="40px"> NaughtyStrings
+# <img src="/src/icon.png" height="30px"> NaughtyStrings
+
+[![Build status](https://ci.appveyor.com/api/projects/status/3tyay4ixlsgf2rcj/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NaughtyStrings)
+[![NuGet Status](https://img.shields.io/nuget/v/NaughtyStrings.svg?label=NaughtyStrings&cacheSeconds=86400)](https://www.nuget.org/packages/NaughtyStrings/)
+[![NuGet Status](https://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?label=NaughtyStrings.Bogus&cacheSeconds=86400)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
 
 Provides a strong typed .NET API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings).
 
@@ -31,7 +35,7 @@ toc
 
 ## NaughtyStrings
 
-https://nuget.org/packages/NaughtyStrings/ [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.svg)](https://www.nuget.org/packages/NaughtyStrings/)
+https://nuget.org/packages/NaughtyStrings/
 
 
 ### Usage
@@ -45,7 +49,7 @@ snippet: usage
 
 Extends [Bogus](https://github.com/bchavez/Bogus) to use Naughty Strings.
 
-https://nuget.org/packages/NaughtyStrings.Bogus/ [![NuGet Status](http://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
+https://nuget.org/packages/NaughtyStrings.Bogus/
 
 
 ### Usage
@@ -75,6 +79,11 @@ snippet: NUnitUsage
 The below example uses the `DynamicData` to consume all naughty strings from a helper class. See [DynamicData](https://www.meziantou.net/2018/02/05/mstest-v2-data-tests) for more information.
 
 snippet: MsTestUsage
+
+
+## Release Notes
+
+See [closed milestones](../../milestones?state=closed).
 
 
 ## Icon
