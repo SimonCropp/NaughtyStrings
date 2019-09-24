@@ -60,25 +60,11 @@ The entry extension method is `Naughty()`. It exposes all strings via `.String()
 snippet: bogususage
 
 
-## Usage in [xUnit](https://xunit.github.io/)
+## Usage in a test suite
 
 The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
 snippet: xUnitUsage
-
-
-## Usage in [NUnit](http://nunit.org/)
-
-The below example uses the `TestCaseSource` to consume all naughty strings from a helper class. See [TestCaseData](https://github.com/nunit/docs/wiki/TestCaseData) for more information.
-
-snippet: NUnitUsage
-
-
-## Usage in [MSTest](https://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework)
-
-The below example uses the `DynamicData` to consume all naughty strings from a helper class. See [DynamicData](https://www.meziantou.net/2018/02/05/mstest-v2-data-tests) for more information.
-
-snippet: MsTestUsage
 
 
 ## Release Notes

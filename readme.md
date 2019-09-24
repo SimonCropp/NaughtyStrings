@@ -44,9 +44,7 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
     * [Usage](#usage)
   * [NaughtyStrings.Bogus](#naughtystringsbogus)
     * [Usage](#usage-1)
-  * [Usage in xUnit](#usage-in-xunit)
-  * [Usage in NUnit](#usage-in-nunit)
-  * [Usage in MSTest](#usage-in-mstest)
+  * [Usage in a test suite](#usage-in-a-test-suite)
 <!-- endtoc -->
 
 
@@ -97,7 +95,7 @@ Debug.WriteLine(target.Property2);
 <!-- endsnippet -->
 
 
-## Usage in [xUnit](https://xunit.github.io/)
+## Usage in a test suite
 
 The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
@@ -118,53 +116,6 @@ public static IEnumerable<object[]> GetData()
 }
 ```
 <sup>[snippet source](/src/Tests/XunitUsage.cs#L9-L22) / [anchor](#snippet-xunitusage)</sup>
-<!-- endsnippet -->
-
-
-## Usage in [NUnit](http://nunit.org/)
-
-The below example uses the `TestCaseSource` to consume all naughty strings from a helper class. See [TestCaseData](https://github.com/nunit/docs/wiki/TestCaseData) for more information.
-
-<!-- snippet: NUnitUsage -->
-<a id='snippet-nunitusage'/></a>
-```cs
-[Test, TestCaseSource(nameof(GetData))]
-public void Run(string naughtyString)
-{
-    Debug.WriteLine(naughtyString);
-}
-
-static IEnumerable GetData
-{
-    get => TheNaughtyStrings.All
-        .Select(naughty => new TestCaseData(naughty));
-}
-```
-<sup>[snippet source](/src/Tests/NUnitUsage.cs#L10-L24) / [anchor](#snippet-nunitusage)</sup>
-<!-- endsnippet -->
-
-
-## Usage in [MSTest](https://en.wikipedia.org/wiki/Visual_Studio_Unit_Testing_Framework)
-
-The below example uses the `DynamicData` to consume all naughty strings from a helper class. See [DynamicData](https://www.meziantou.net/2018/02/05/mstest-v2-data-tests) for more information.
-
-<!-- snippet: MsTestUsage -->
-<a id='snippet-mstestusage'/></a>
-```cs
-[TestMethod]
-[DynamicData(nameof(GetData))]
-public void Run(string naughtyString)
-{
-    Debug.WriteLine(naughtyString);
-}
-
-static IEnumerable<object[]> GetData()
-{
-    return TheNaughtyStrings.All
-        .Select(naughty => new object[] {naughty});
-}
-```
-<sup>[snippet source](/src/Tests/MsTestUsage.cs#L10-L23) / [anchor](#snippet-mstestusage)</sup>
 <!-- endsnippet -->
 
 
