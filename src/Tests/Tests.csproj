@@ -6,6 +6,7 @@
     <PackageReference Include="MSTest.TestFramework" Version="2.0.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="System.CodeDom" Version="4.6.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
@@ -13,6 +14,5 @@
     <ProjectReference Include="..\NaughtyStrings.Bogus\NaughtyStrings.Bogus.csproj" />
     <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />
     <PackageReference Include="ProjectDefaults" Version="1.0.24" PrivateAssets="All" />
-    <Reference Include="System.Net.Http" />
   </ItemGroup>
 </Project>

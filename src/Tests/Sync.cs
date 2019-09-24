@@ -147,7 +147,7 @@ namespace NaughtyStrings
         writer.WriteLine("        };");
     }
 
-    private static void WriteLine(StreamWriter writer, CodeDomProvider provider, string line)
+    static void WriteLine(StreamWriter writer, CodeDomProvider provider, string line)
     {
         writer.Write("            ");
         if (line.StartsWith("\t"))
