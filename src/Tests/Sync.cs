@@ -166,16 +166,16 @@ namespace NaughtyStrings
         {
             var lines = group.Split('\n');
             yield return new Category
-            {
-                Title = TrimHash(lines[0])
+            (
+                title: TrimHash(lines[0])
                     .Replace(" ", "")
                     .Replace("/", "")
                     .Replace("-", "")
                     .Replace(")", "")
                     .Replace("(", ""),
-                Description = string.Join(" ", lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash)),
-                Lines = lines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList(),
-            };
+                description: string.Join(" ", lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash)),
+                lines: lines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList()
+            );
         }
     }
 

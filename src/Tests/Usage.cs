@@ -29,6 +29,6 @@ public class Usage
 
 public class Target
 {
-    public string Property1;
-    public string Property2;
+    public string Property1 = null!;
+    public string Property2 = null!;
 }
