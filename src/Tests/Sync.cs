@@ -22,17 +22,17 @@ public class Sync
         var naughtyStringsPath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "../../../../NaughtyStrings/TheNaughtyStrings.cs"));
         File.Delete(naughtyStringsPath);
         using (var provider = CodeDomProvider.CreateProvider("CSharp"))
-        using (var stream = File.Open(naughtyStringsPath, FileMode.Create))
-        using (var writer = new StreamWriter(stream, Encoding.Unicode))
         {
+            await using var stream = File.Open(naughtyStringsPath, FileMode.Create);
+            await using var writer = new StreamWriter(stream, Encoding.Unicode);
             WriteNaughtyStrings(writer, provider, categories);
         }
 
         var bogusPath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "../../../../NaughtyStrings.Bogus/Naughty.cs"));
         File.Delete(bogusPath);
-        using (var stream = File.Open(bogusPath, FileMode.Create))
-        using (var writer = new StreamWriter(stream, Encoding.Unicode))
+        await using (var stream = File.Open(bogusPath, FileMode.Create))
         {
+            await using var writer = new StreamWriter(stream, Encoding.Unicode);
             WriteBogus(writer, categories);
         }
     }
