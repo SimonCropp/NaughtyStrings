@@ -44,9 +44,7 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
     * [Usage](#usage)
   * [NaughtyStrings.Bogus](#naughtystringsbogus)
     * [Usage](#usage-1)
-  * [Usage in a test suite](#usage-in-a-test-suite)
-<!-- endtoc -->
-
+  * [Usage in a test suite](#usage-in-a-test-suite)<!-- endtoc -->
 
 
 ## NaughtyStrings
@@ -64,7 +62,7 @@ The entry type is a static class `TheNaughtyStrings`. It exposes all strings via
 var items = TheNaughtyStrings.All.Take(10);
 var emoji = TheNaughtyStrings.Emoji.Take(10);
 ```
-<sup>[snippet source](/src/Tests/Usage.cs#L10-L15) / [anchor](#snippet-usage)</sup>
+<sup><a href='/src/Tests/Usage.cs#L10-L15' title='File snippet `usage` was extracted from'>snippet source</a> | <a href='#snippet-usage' title='Navigate to start of snippet `usage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -91,7 +89,7 @@ var target = faker.Generate();
 Debug.WriteLine(target.Property1);
 Debug.WriteLine(target.Property2);
 ```
-<sup>[snippet source](/src/Tests/Usage.cs#L16-L26) / [anchor](#snippet-bogususage)</sup>
+<sup><a href='/src/Tests/Usage.cs#L16-L26' title='File snippet `bogususage` was extracted from'>snippet source</a> | <a href='#snippet-bogususage' title='Navigate to start of snippet `bogususage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
@@ -115,7 +113,7 @@ public static IEnumerable<object[]> GetData()
         .Select(naughty => new object[] {naughty});
 }
 ```
-<sup>[snippet source](/src/Tests/XunitUsage.cs#L9-L22) / [anchor](#snippet-xunitusage)</sup>
+<sup><a href='/src/Tests/XunitUsage.cs#L9-L22' title='File snippet `xunitusage` was extracted from'>snippet source</a> | <a href='#snippet-xunitusage' title='Navigate to start of snippet `xunitusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 
