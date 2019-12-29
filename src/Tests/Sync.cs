@@ -7,9 +7,12 @@ using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using VerifyXunit;
 using Xunit;
+using Xunit.Abstractions;
 
-public class Sync
+public class Sync:
+    VerifyBase
 {
     [Fact]
     public async Task SyncNaughtyStrings()
@@ -19,7 +22,7 @@ public class Sync
 
         var categories = Parse(content).ToList();
 
-        var naughtyStringsPath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "../../../../NaughtyStrings/TheNaughtyStrings.cs"));
+        var naughtyStringsPath = Path.GetFullPath(Path.Combine(SourceDirectory, "../NaughtyStrings/TheNaughtyStrings.cs"));
         File.Delete(naughtyStringsPath);
         using (var provider = CodeDomProvider.CreateProvider("CSharp"))
         {
@@ -28,7 +31,7 @@ public class Sync
             WriteNaughtyStrings(writer, provider, categories);
         }
 
-        var bogusPath = Path.GetFullPath(Path.Combine(Environment.CurrentDirectory, "../../../../NaughtyStrings.Bogus/Naughty.cs"));
+        var bogusPath = Path.GetFullPath(Path.Combine(SourceDirectory, "../NaughtyStrings.Bogus/Naughty.cs"));
         File.Delete(bogusPath);
         await using (var stream = File.Open(bogusPath, FileMode.Create))
         {
@@ -182,5 +185,10 @@ namespace NaughtyStrings
     static string TrimHash(string s)
     {
         return s.TrimStart('#').Trim();
+    }
+
+    public Sync(ITestOutputHelper output) :
+        base(output)
+    {
     }
 }
