@@ -168,15 +168,19 @@ namespace NaughtyStrings
         foreach (var group in strings)
         {
             var lines = group.Split('\n');
+            var description = string.Join(" ", lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash));
+            var lineZero = lines[0];
+            var title = TrimHash(lineZero)
+                .Split(":").First()
+                .Replace(" ", "")
+                .Replace("/", "")
+                .Replace("-", "")
+                .Replace(")", "")
+                .Replace("(", "");
             yield return new Category
             (
-                title: TrimHash(lines[0])
-                    .Replace(" ", "")
-                    .Replace("/", "")
-                    .Replace("-", "")
-                    .Replace(")", "")
-                    .Replace("(", ""),
-                description: string.Join(" ", lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash)),
+                title: title,
+                description: description,
                 lines: lines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList()
             );
         }
