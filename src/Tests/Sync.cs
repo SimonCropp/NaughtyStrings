@@ -164,9 +164,9 @@ namespace NaughtyStrings
         var strings = content.Split(new[] {"\n\n#\t"}, StringSplitOptions.None);
         foreach (var group in strings)
         {
-            var lines = group.Split('\n');
-            var description = string.Join(" ", lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash));
-            var lineZero = lines[0];
+            var allLines = group.Split('\n');
+            var description = string.Join(" ", allLines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash));
+            var lineZero = allLines[0];
             var title = TrimHash(lineZero)
                 .Split(":").First()
                 .Replace(" ", "")
@@ -174,13 +174,25 @@ namespace NaughtyStrings
                 .Replace("-", "")
                 .Replace(")", "")
                 .Replace("(", "");
+            var lines = GetLines(allLines);
             yield return new Category
             (
                 title: title,
                 description: description,
-                lines: lines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList()
+                lines: lines
             );
         }
+    }
+
+    static List<string> GetLines(string[] allLines)
+    {
+        var list = allLines.Where(x => x.Contains("          ")).ToList();
+        if (list.Count > 0)
+        {
+            return list.Select(x => x.Replace("#	", "").Split("          ").First()).ToList();
+        }
+
+        return allLines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList();
     }
 
     static string TrimHash(string s)

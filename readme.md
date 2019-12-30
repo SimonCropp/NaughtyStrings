@@ -100,20 +100,16 @@ The below example uses the `MemberDataAttribute` to consume all naughty strings 
 <!-- snippet: xUnitUsage -->
 <a id='snippet-xunitusage'/></a>
 ```cs
-[Theory]
-[MemberData(nameof(GetData))]
-public void Run(string naughtyString)
+[Fact]
+public void Run()
 {
-    Debug.WriteLine(naughtyString);
-}
-
-public static IEnumerable<object[]> GetData()
-{
-    return TheNaughtyStrings.All
-        .Select(naughty => new object[] {naughty});
+    foreach (var naughtyString in TheNaughtyStrings.All)
+    {
+        Debug.WriteLine(naughtyString);
+    }
 }
 ```
-<sup><a href='/src/Tests/XunitUsage.cs#L9-L22' title='File snippet `xunitusage` was extracted from'>snippet source</a> | <a href='#snippet-xunitusage' title='Navigate to start of snippet `xunitusage`'>anchor</a></sup>
+<sup><a href='/src/Tests/XunitUsage.cs#L7-L16' title='File snippet `xunitusage` was extracted from'>snippet source</a> | <a href='#snippet-xunitusage' title='Navigate to start of snippet `xunitusage`'>anchor</a></sup>
 <!-- endsnippet -->
 
 

@@ -1,23 +1,17 @@
-﻿using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Diagnostics;
 using NaughtyStrings;
 using Xunit;
 
 public class XunitUsage
 {
     #region xUnitUsage
-    [Theory]
-    [MemberData(nameof(GetData))]
-    public void Run(string naughtyString)
+    [Fact]
+    public void Run()
     {
-        Debug.WriteLine(naughtyString);
-    }
-
-    public static IEnumerable<object[]> GetData()
-    {
-        return TheNaughtyStrings.All
-            .Select(naughty => new object[] {naughty});
+        foreach (var naughtyString in TheNaughtyStrings.All)
+        {
+            Debug.WriteLine(naughtyString);
+        }
     }
     #endregion
 }
