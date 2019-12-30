@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using VerifyXunit;
 using Xunit;
@@ -26,16 +25,14 @@ public class Sync:
         File.Delete(naughtyStringsPath);
         using (var provider = CodeDomProvider.CreateProvider("CSharp"))
         {
-            await using var stream = File.Open(naughtyStringsPath, FileMode.Create);
-            await using var writer = new StreamWriter(stream, Encoding.Unicode);
+            await using var writer = File.CreateText(naughtyStringsPath);
             WriteNaughtyStrings(writer, provider, categories);
         }
 
         var bogusPath = Path.GetFullPath(Path.Combine(SourceDirectory, "../NaughtyStrings.Bogus/Naughty.cs"));
         File.Delete(bogusPath);
-        await using (var stream = File.Open(bogusPath, FileMode.Create))
+        await using (var writer = File.CreateText(bogusPath))
         {
-            await using var writer = new StreamWriter(stream, Encoding.Unicode);
             WriteBogus(writer, categories);
         }
     }
@@ -168,15 +165,19 @@ namespace NaughtyStrings
         foreach (var group in strings)
         {
             var lines = group.Split('\n');
+            var description = string.Join(" ", lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash));
+            var lineZero = lines[0];
+            var title = TrimHash(lineZero)
+                .Split(":").First()
+                .Replace(" ", "")
+                .Replace("/", "")
+                .Replace("-", "")
+                .Replace(")", "")
+                .Replace("(", "");
             yield return new Category
             (
-                title: TrimHash(lines[0])
-                    .Replace(" ", "")
-                    .Replace("/", "")
-                    .Replace("-", "")
-                    .Replace(")", "")
-                    .Replace("(", ""),
-                description: string.Join(" ", lines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash)),
+                title: title,
+                description: description,
                 lines: lines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList()
             );
         }
