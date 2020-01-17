@@ -44,7 +44,8 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
     * [Usage](#usage)
   * [NaughtyStrings.Bogus](#naughtystringsbogus)
     * [Usage](#usage-1)
-  * [Usage in a test suite](#usage-in-a-test-suite)<!-- endtoc -->
+  * [Usage in a test suite](#usage-in-a-test-suite)
+  * [Security contact information](#security-contact-information)<!-- endtoc -->
 
 
 ## NaughtyStrings
@@ -111,6 +112,11 @@ public void Run()
 ```
 <sup><a href='/src/Tests/XunitUsage.cs#L7-L16' title='File snippet `xunitusage` was extracted from'>snippet source</a> | <a href='#snippet-xunitusage' title='Navigate to start of snippet `xunitusage`'>anchor</a></sup>
 <!-- endsnippet -->
+
+
+## Security contact information
+
+To report a security vulnerability, please use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Release Notes
