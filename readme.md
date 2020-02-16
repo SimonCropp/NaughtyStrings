@@ -37,6 +37,8 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 `⁄€‹›ﬁﬂ‡°·‚—±
 ```
 
+Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-naughtystrings?utm_source=nuget-naughtystrings&utm_medium=referral&utm_campaign=enterprise).
+
 <!-- toc -->
 ## Contents
 
