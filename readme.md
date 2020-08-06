@@ -60,7 +60,7 @@ https://nuget.org/packages/NaughtyStrings/
 The entry type is a static class `TheNaughtyStrings`. It exposes all strings via `TheNaughtyStrings.All` and individual categories by name:
 
 <!-- snippet: usage -->
-<a id='snippet-usage'/></a>
+<a id='snippet-usage'></a>
 ```cs
 var items = TheNaughtyStrings.All.Take(10);
 var emoji = TheNaughtyStrings.Emoji.Take(10);
@@ -82,7 +82,7 @@ https://nuget.org/packages/NaughtyStrings.Bogus/
 The entry extension method is `Naughty()`. It exposes all strings via `.String()` and individual categories by name:
 
 <!-- snippet: bogususage -->
-<a id='snippet-bogususage'/></a>
+<a id='snippet-bogususage'></a>
 ```cs
 var faker = new Faker<Target>()
     .RuleFor(u => u.Property1, (f, u) => f.Naughty().String())
@@ -101,7 +101,7 @@ Debug.WriteLine(target.Property2);
 The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
 <!-- snippet: xUnitUsage -->
-<a id='snippet-xunitusage'/></a>
+<a id='snippet-xunitusage'></a>
 ```cs
 [Fact]
 public void Run()
