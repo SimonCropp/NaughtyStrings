@@ -1,5 +1,6 @@
 ﻿{
   "TocExcludes": [ "Release Notes", "Icon" ],
   "MaxWidth": 80,
-  "ValidateContent": true
+  "ValidateContent": true,
+  "Convention": "InPlaceOverwrite"
 }
