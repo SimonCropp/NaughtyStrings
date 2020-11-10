@@ -53,12 +53,12 @@ https://nuget.org/packages/NaughtyStrings/
 The entry type is a static class `TheNaughtyStrings`. It exposes all strings via `TheNaughtyStrings.All` and individual categories by name:
 
 <!-- snippet: usage -->
-<a id='c629ba0e'></a>
+<a id='snippet-usage'></a>
 ```cs
 var items = TheNaughtyStrings.All.Take(10);
 var emoji = TheNaughtyStrings.Emoji.Take(10);
 ```
-<sup><a href='/src/Tests/Usage.cs#L10-L15' title='Snippet source file'>snippet source</a> | <a href='#c629ba0e' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Usage.cs#L10-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -75,7 +75,7 @@ https://nuget.org/packages/NaughtyStrings.Bogus/
 The entry extension method is `Naughty()`. It exposes all strings via `.String()` and individual categories by name:
 
 <!-- snippet: bogususage -->
-<a id='2b412073'></a>
+<a id='snippet-bogususage'></a>
 ```cs
 var faker = new Faker<Target>()
     .RuleFor(u => u.Property1, (f, u) => f.Naughty().String())
@@ -85,7 +85,7 @@ var target = faker.Generate();
 Debug.WriteLine(target.Property1);
 Debug.WriteLine(target.Property2);
 ```
-<sup><a href='/src/Tests/Usage.cs#L16-L26' title='Snippet source file'>snippet source</a> | <a href='#2b412073' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Usage.cs#L16-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-bogususage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -94,7 +94,7 @@ Debug.WriteLine(target.Property2);
 The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
 <!-- snippet: xUnitUsage -->
-<a id='3133e05e'></a>
+<a id='snippet-xunitusage'></a>
 ```cs
 [Fact]
 public void Run()
@@ -105,7 +105,7 @@ public void Run()
     }
 }
 ```
-<sup><a href='/src/Tests/XunitUsage.cs#L7-L16' title='Snippet source file'>snippet source</a> | <a href='#3133e05e' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/XunitUsage.cs#L7-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-xunitusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
