@@ -13,7 +13,7 @@ public class Sync
     [Fact]
     public async Task SyncNaughtyStrings()
     {
-        var httpClient = new HttpClient();
+        HttpClient httpClient = new();
         var content = await httpClient.GetStringAsync("https://raw.githubusercontent.com/minimaxir/big-list-of-naughty-strings/master/blns.txt");
 
         var categories = Parse(content).ToList();
