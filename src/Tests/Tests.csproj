@@ -5,14 +5,11 @@
   <ItemGroup>
     <PackageReference Include="System.CodeDom" Version="5.0.0" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
-    <PackageReference Include="Verify.Xunit" Version="6.23.3" />
+    <PackageReference Include="Verify.Xunit" Version="8.11.0" />
     <PackageReference Include="Xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.0" />
-    <PackageReference Include="MarkdownSnippets.MsBuild" Version="21.7.0">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+    <PackageReference Include="MarkdownSnippets.MsBuild" Version="21.7.1" />
     <ProjectReference Include="..\NaughtyStrings.Bogus\NaughtyStrings.Bogus.csproj" />
     <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />
     <PackageReference Include="ProjectDefaults" Version="1.0.48" PrivateAssets="All" />
