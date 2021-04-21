@@ -28,10 +28,10 @@ namespace NaughtyStrings
             "Paragraph ¶",
             "Ellipsis …",
             "Optional hyphen ¬",
-            "Non-breaking hyphen  ",
-            "Em space  ",
-            "En space  ",
-            "Quarter space  "
+            "Non-breaking hyphen " + (char) 2011,
+            "Em space " + (char) 2003,
+            "En space " + (char) 2002,
+            "Quarter space " + (char) 2005
         };
     }
 }

@@ -113,7 +113,6 @@ namespace NaughtyStrings
     {");
 
         var lines = categories.SelectMany(x => x.Lines).ToList();
-        lines.AddRange(TheNaughtyStrings.SpecialWordCharacters);
 
         WriteList(writer, provider, "All", "All naughty strings.", lines);
 
