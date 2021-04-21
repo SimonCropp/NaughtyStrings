@@ -31,7 +31,7 @@ namespace NaughtyStrings
             "Non-breaking hyphen  ",
             "Em space  ",
             "En space  ",
-            "Quater space  "
+            "Quarter space  "
         };
     }
 }
