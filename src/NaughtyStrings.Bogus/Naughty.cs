@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace NaughtyStrings.Bogus
 {
-    public class Naughty : DataSet
+    public partial class Naughty : DataSet
     {
         /// <summary>
         /// All naughty strings.

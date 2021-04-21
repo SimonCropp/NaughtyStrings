@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using NaughtyStrings;
 using Xunit;
 
 public class Sync
@@ -41,7 +42,7 @@ using System.Collections.Generic;
 
 namespace NaughtyStrings.Bogus
 {
-    public class Naughty : DataSet
+    public partial class Naughty : DataSet
     {
         /// <summary>
         /// All naughty strings.
@@ -108,10 +109,12 @@ namespace NaughtyStrings
 .Bogus
 #endif
 {
-    public static class TheNaughtyStrings
+    public static partial class TheNaughtyStrings
     {");
 
-        var lines = categories.SelectMany(x => x.Lines);
+        var lines = categories.SelectMany(x => x.Lines).ToList();
+        lines.AddRange(TheNaughtyStrings.SpecialWordCharacters);
+
         WriteList(writer, provider, "All", "All naughty strings.", lines);
 
         foreach (var category in categories)
@@ -156,7 +159,7 @@ namespace NaughtyStrings
         writer.WriteLine(",");
     }
 
-    IEnumerable<Category> Parse(string content)
+    static IEnumerable<Category> Parse(string content)
     {
         var strings = content.Split(new[] {"\n\n#\t"}, StringSplitOptions.None);
         foreach (var group in strings)
