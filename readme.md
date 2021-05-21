@@ -30,18 +30,6 @@ Z̮̞̠͙͔ͅḀ̗̞͈̻̗Ḷ͙͎̯̹̞͓G̻O̭̗̮
 `⁄€‹›ﬁﬂ‡°·‚—±
 ```
 
-Support is available via a [Tidelift Subscription](https://tidelift.com/subscription/pkg/nuget-naughtystrings?utm_source=nuget-naughtystrings&utm_medium=referral&utm_campaign=enterprise).
-
-<!-- toc -->
-## Contents
-
-  * [NaughtyStrings](#naughtystrings)
-    * [Usage](#usage)
-  * [NaughtyStrings.Bogus](#naughtystringsbogus)
-    * [Usage](#usage-1)
-  * [Usage in a test suite](#usage-in-a-test-suite)
-  * [Security contact information](#security-contact-information)<!-- endToc -->
-
 
 ## NaughtyStrings
 
@@ -108,10 +96,6 @@ public void Run()
 <sup><a href='/src/Tests/XunitUsage.cs#L7-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-xunitusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
-
-## Security contact information
-
-To report a security vulnerability, use the [Tidelift security contact](https://tidelift.com/security). Tidelift will coordinate the fix and disclosure.
 
 
 ## Icon
