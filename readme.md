@@ -46,7 +46,7 @@ The entry type is a static class `TheNaughtyStrings`. It exposes all strings via
 var items = TheNaughtyStrings.All.Take(10);
 var emoji = TheNaughtyStrings.Emoji.Take(10);
 ```
-<sup><a href='/src/Tests/Usage.cs#L10-L15' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Usage.cs#L12-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-usage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -73,7 +73,7 @@ var target = faker.Generate();
 Debug.WriteLine(target.Property1);
 Debug.WriteLine(target.Property2);
 ```
-<sup><a href='/src/Tests/Usage.cs#L16-L26' title='Snippet source file'>snippet source</a> | <a href='#snippet-bogususage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/Usage.cs#L18-L28' title='Snippet source file'>snippet source</a> | <a href='#snippet-bogususage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
@@ -93,7 +93,7 @@ public void Run()
     }
 }
 ```
-<sup><a href='/src/Tests/XunitUsage.cs#L7-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-xunitusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/XunitUsage.cs#L7-L18' title='Snippet source file'>snippet source</a> | <a href='#snippet-xunitusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 

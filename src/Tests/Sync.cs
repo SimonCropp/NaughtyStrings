@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using NaughtyStrings;
 using Xunit;
 
 public class Sync
@@ -47,9 +46,8 @@ namespace NaughtyStrings.Bogus
         /// <summary>
         /// All naughty strings.
         /// </summary>
-        public IEnumerable<string> Strings(int num = 1)
+        public IEnumerable<string> Strings(uint num = 1)
         {
-            Guard.AgainstNegative(num, nameof(num));
             for (var i = 0; i < num; i++)
             {
                 yield return String();
@@ -81,9 +79,8 @@ namespace NaughtyStrings.Bogus
         /// <summary>
         /// {comment}
         /// </summary>
-        public IEnumerable<string> {name}(int num = 1)
+        public IEnumerable<string> {name}(uint num = 1)
         {{
-            Guard.AgainstNegative(num, nameof(num));
             for (var i = 0; i < num; i++)
             {{
                 yield return {name}();
@@ -174,8 +171,7 @@ namespace NaughtyStrings
                 .Replace(")", "")
                 .Replace("(", "");
             var lines = GetLines(allLines);
-            yield return new Category
-            (
+            yield return new(
                 title: title,
                 description: description,
                 lines: lines

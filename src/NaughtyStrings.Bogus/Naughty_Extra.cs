@@ -8,9 +8,8 @@ namespace NaughtyStrings.Bogus
         /// <summary>
         ///  Special characters that are commonly used by Microsoft Word
         /// </summary>
-        public IEnumerable<string> SpecialWordCharacters(int num = 1)
+        public IEnumerable<string> SpecialWordCharacters(uint num = 1)
         {
-            Guard.AgainstNegative(num, nameof(num));
             for (var i = 0; i < num; i++)
             {
                 yield return SpecialWordCharacters();

@@ -2,6 +2,8 @@
 using System.Linq;
 using Bogus;
 using NaughtyStrings;
+// ReSharper disable UnusedVariable
+// ReSharper disable UnusedParameter.Local
 
 public class Usage
 {

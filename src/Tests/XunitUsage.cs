@@ -5,6 +5,7 @@ using Xunit;
 public class XunitUsage
 {
     #region xUnitUsage
+
     [Fact]
     public void Run()
     {
@@ -13,5 +14,6 @@ public class XunitUsage
             Debug.WriteLine(naughtyString);
         }
     }
+
     #endregion
 }
