@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using System.Linq;
-using Bogus;
+﻿using Bogus;
 using NaughtyStrings;
 // ReSharper disable UnusedVariable
 // ReSharper disable UnusedParameter.Local

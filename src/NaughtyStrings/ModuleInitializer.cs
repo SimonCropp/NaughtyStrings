@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using NaughtyStrings;
+﻿using NaughtyStrings;
 
 static class ModuleInit
 {

@@ -1,29 +1,27 @@
 using Bogus;
-using System.Collections.Generic;
 
-namespace NaughtyStrings.Bogus
+namespace NaughtyStrings.Bogus;
+
+public partial class Naughty : DataSet
 {
-    public partial class Naughty : DataSet
+    /// <summary>
+    ///  Special characters that are commonly used by Microsoft Word
+    /// </summary>
+    public IEnumerable<string> SpecialWordCharacters(uint num = 1)
     {
-        /// <summary>
-        ///  Special characters that are commonly used by Microsoft Word
-        /// </summary>
-        public IEnumerable<string> SpecialWordCharacters(uint num = 1)
+        for (var i = 0; i < num; i++)
         {
-            for (var i = 0; i < num; i++)
-            {
-                yield return SpecialWordCharacters();
-            }
+            yield return SpecialWordCharacters();
         }
-
-        /// <summary>
-        ///  Special characters that are commonly used by Microsoft Word
-        /// </summary>
-        public string SpecialWordCharacters()
-        {
-            var index = Random.Number(TheNaughtyStrings.SpecialWordCharacters.Count - 1);
-            return TheNaughtyStrings.SpecialWordCharacters[index];
-        }
-
     }
+
+    /// <summary>
+    ///  Special characters that are commonly used by Microsoft Word
+    /// </summary>
+    public string SpecialWordCharacters()
+    {
+        var index = Random.Number(TheNaughtyStrings.SpecialWordCharacters.Count - 1);
+        return TheNaughtyStrings.SpecialWordCharacters[index];
+    }
+
 }

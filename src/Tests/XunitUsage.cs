@@ -1,5 +1,4 @@
-﻿using System.Diagnostics;
-using NaughtyStrings;
+﻿using NaughtyStrings;
 using Xunit;
 
 public class XunitUsage
