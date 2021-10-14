@@ -1,13 +1,12 @@
 ﻿using Bogus.Premium;
 using NaughtyStrings.Bogus;
 
-namespace Bogus
+namespace Bogus;
+
+public static class NaughtyStringExtensions
 {
-    public static class NaughtyStringExtensions
+    public static Naughty Naughty(this Faker faker)
     {
-        public static Naughty Naughty(this Faker faker)
-        {
-            return ContextHelper.GetOrSet(faker, () => new Naughty());
-        }
+        return ContextHelper.GetOrSet(faker, () => new Naughty());
     }
 }

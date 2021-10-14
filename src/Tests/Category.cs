@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-class Category
+﻿class Category
 {
     public string Title { get; }
     public string Description { get; }
