@@ -9,7 +9,7 @@
     <Compile Include="..\NaughtyStrings\TheNaughtyStrings_Extra.cs" />
 
     <PackageReference Include="Bogus" Version="34.0.1" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.62" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.63" PrivateAssets="all" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" Condition="$(Configuration) == 'Release'" />
   </ItemGroup>
 </Project>
