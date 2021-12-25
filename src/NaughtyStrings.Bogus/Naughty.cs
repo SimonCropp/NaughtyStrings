@@ -1,29 +1,28 @@
 using Bogus;
-using System.Collections.Generic;
 
-namespace NaughtyStrings.Bogus
+namespace NaughtyStrings.Bogus;
+
+public partial class Naughty : DataSet
 {
-    public partial class Naughty : DataSet
+    /// <summary>
+    /// All naughty strings.
+    /// </summary>
+    public IEnumerable<string> Strings(uint num = 1)
     {
-        /// <summary>
-        /// All naughty strings.
-        /// </summary>
-        public IEnumerable<string> Strings(uint num = 1)
+        for (var i = 0; i < num; i++)
         {
-            for (var i = 0; i < num; i++)
-            {
-                yield return String();
-            }
+            yield return String();
         }
+    }
 
-        /// <summary>
-        /// A naughty string.
-        /// </summary>
-        public string String()
-        {
-            var index = Random.Number(TheNaughtyStrings.All.Count - 1);
-            return TheNaughtyStrings.All[index];
-        }
+    /// <summary>
+    /// A naughty string.
+    /// </summary>
+    public string String()
+    {
+        var index = Random.Number(TheNaughtyStrings.All.Count - 1);
+        return TheNaughtyStrings.All[index];
+    }
 
         /// <summary>
         ///  Strings which may be used elsewhere in code
@@ -645,5 +644,4 @@ namespace NaughtyStrings.Bogus
             return TheNaughtyStrings.iOSVulnerabilities[index];
         }
 
-    }
 }

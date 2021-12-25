@@ -30,39 +30,37 @@ public class Sync
     static void WriteBogus(StreamWriter writer, List<Category> categories)
     {
         writer.WriteLine(@"using Bogus;
-using System.Collections.Generic;
 
-namespace NaughtyStrings.Bogus
+namespace NaughtyStrings.Bogus;
+
+public partial class Naughty : DataSet
 {
-    public partial class Naughty : DataSet
+    /// <summary>
+    /// All naughty strings.
+    /// </summary>
+    public IEnumerable<string> Strings(uint num = 1)
     {
-        /// <summary>
-        /// All naughty strings.
-        /// </summary>
-        public IEnumerable<string> Strings(uint num = 1)
+        for (var i = 0; i < num; i++)
         {
-            for (var i = 0; i < num; i++)
-            {
-                yield return String();
-            }
+            yield return String();
         }
-
-        /// <summary>
-        /// A naughty string.
-        /// </summary>
-        public string String()
-        {
-            var index = Random.Number(TheNaughtyStrings.All.Count - 1);
-            return TheNaughtyStrings.All[index];
-        }");
-
-        foreach (var category in categories)
-        {
-            WriteBogusItem(writer, category.Title, category.Description);
-        }
-
-        writer.WriteLine(@"
     }
+
+    /// <summary>
+    /// A naughty string.
+    /// </summary>
+    public string String()
+    {
+        var index = Random.Number(TheNaughtyStrings.All.Count - 1);
+        return TheNaughtyStrings.All[index];
+    }");
+
+    foreach (var category in categories)
+    {
+        WriteBogusItem(writer, category.Title, category.Description);
+    }
+
+    writer.WriteLine(@"
 }");
     }
 
@@ -92,9 +90,7 @@ namespace NaughtyStrings.Bogus
 
     static void WriteNaughtyStrings(StreamWriter writer, CodeDomProvider provider, List<Category> categories)
     {
-        writer.WriteLine(@"using System.Collections.Generic;
-
-namespace NaughtyStrings
+        writer.WriteLine(@"namespace NaughtyStrings
 #if Bogus
 .Bogus
 #endif
