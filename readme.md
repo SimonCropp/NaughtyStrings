@@ -93,7 +93,7 @@ public void Run()
     }
 }
 ```
-<sup><a href='/src/Tests/XunitUsage.cs#L6-L17' title='Snippet source file'>snippet source</a> | <a href='#snippet-xunitusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/XunitUsage.cs#L5-L16' title='Snippet source file'>snippet source</a> | <a href='#snippet-xunitusage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
