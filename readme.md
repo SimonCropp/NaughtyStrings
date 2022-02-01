@@ -1,6 +1,6 @@
 # <img src="/src/icon.png" height="30px"> NaughtyStrings
 
-[![Build status](https://ci.appveyor.com/api/projects/status/3tyay4ixlsgf2rcj/branch/master?svg=true)](https://ci.appveyor.com/project/SimonCropp/NaughtyStrings)
+[![Build status](https://ci.appveyor.com/api/projects/status/3tyay4ixlsgf2rcj/branch/main?svg=true)](https://ci.appveyor.com/project/SimonCropp/NaughtyStrings)
 [![NuGet Status](https://img.shields.io/nuget/v/NaughtyStrings.svg?label=NaughtyStrings)](https://www.nuget.org/packages/NaughtyStrings/)
 [![NuGet Status](https://img.shields.io/nuget/v/NaughtyStrings.Bogus.svg?label=NaughtyStrings.Bogus)](https://www.nuget.org/packages/NaughtyStrings.Bogus/)
 
