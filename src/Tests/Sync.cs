@@ -64,8 +64,7 @@ public partial class Naughty : DataSet
 }");
     }
 
-    static void WriteBogusItem(StreamWriter writer, string name, string comment)
-    {
+    static void WriteBogusItem(StreamWriter writer, string name, string comment) =>
         writer.WriteLine($@"
         /// <summary>
         /// {comment}
@@ -86,7 +85,6 @@ public partial class Naughty : DataSet
             var index = Random.Number(TheNaughtyStrings.{name}.Count - 1);
             return TheNaughtyStrings.{name}[index];
         }}");
-    }
 
     static void WriteNaughtyStrings(StreamWriter writer, CodeDomProvider provider, List<Category> categories)
     {
@@ -179,8 +177,6 @@ public partial class Naughty : DataSet
         return allLines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList();
     }
 
-    static string TrimHash(string s)
-    {
-        return s.TrimStart('#').Trim();
-    }
+    static string TrimHash(string s) =>
+        s.TrimStart('#').Trim();
 }
