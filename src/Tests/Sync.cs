@@ -138,7 +138,7 @@ public partial class Naughty : DataSet
             writer.Write("@");
         }
 
-        provider.GenerateCodeFromExpression(new CodePrimitiveExpression(line), writer, null);
+        provider.GenerateCodeFromExpression(new CodePrimitiveExpression(line), writer, null!);
         writer.WriteLine(",");
     }
 

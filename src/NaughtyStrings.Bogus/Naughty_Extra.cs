@@ -1,8 +1,6 @@
-using Bogus;
-
 namespace NaughtyStrings.Bogus;
 
-public partial class Naughty : DataSet
+public partial class Naughty
 {
     /// <summary>
     ///  Special characters that are commonly used by Microsoft Word
