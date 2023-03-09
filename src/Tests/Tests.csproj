@@ -13,6 +13,6 @@
     <PackageReference Include="MarkdownSnippets.MsBuild" Version="24.5.1" />
     <ProjectReference Include="..\NaughtyStrings.Bogus\NaughtyStrings.Bogus.csproj" />
     <ProjectReference Include="..\NaughtyStrings\NaughtyStrings.csproj" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.88" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.89" PrivateAssets="all" />
   </ItemGroup>
 </Project>
