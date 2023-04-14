@@ -112,7 +112,7 @@ public partial class Naughty : DataSet
 
     static void WriteList(StreamWriter writer, CodeDomProvider provider, string name, string comment, IEnumerable<string> lines)
     {
-        if (!comment.EndsWith("."))
+        if (!comment.EndsWith('.'))
         {
             comment += ".";
         }
@@ -133,13 +133,13 @@ public partial class Naughty : DataSet
     static void WriteLine(StreamWriter writer, CodeDomProvider provider, string line)
     {
         writer.Write("            ");
-        if (line.StartsWith("\t"))
+        if (line.StartsWith('\t'))
         {
-            writer.Write("@");
+            writer.Write('@');
         }
 
         provider.GenerateCodeFromExpression(new CodePrimitiveExpression(line), writer, null!);
-        writer.WriteLine(",");
+        writer.WriteLine(',');
     }
 
     static IEnumerable<Category> Parse(string content)
@@ -148,7 +148,7 @@ public partial class Naughty : DataSet
         foreach (var group in strings)
         {
             var allLines = group.Split('\n');
-            var description = string.Join(" ", allLines.Skip(1).TakeWhile(x => x.StartsWith("#")).Select(TrimHash));
+            var description = string.Join(' ', allLines.Skip(1).TakeWhile(x => x.StartsWith('#')).Select(TrimHash));
             var lineZero = allLines[0];
             var title = TrimHash(lineZero)
                 .Split(":").First()
@@ -174,7 +174,7 @@ public partial class Naughty : DataSet
             return list.Select(x => x.Replace("#	", "").Split("          ").First()).ToList();
         }
 
-        return allLines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith("#")).ToList();
+        return allLines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith('#')).ToList();
     }
 
     static string TrimHash(string s) =>
