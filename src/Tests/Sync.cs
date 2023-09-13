@@ -11,20 +11,28 @@ public class Sync
 
         var categories = Parse(content).ToList();
 
-        var naughtyStringsPath = Path.GetFullPath("../../../../NaughtyStrings/TheNaughtyStrings.cs");
-        File.Delete(naughtyStringsPath);
-        using (var provider = CodeDomProvider.CreateProvider("CSharp"))
-        {
-            await using var writer = File.CreateText(naughtyStringsPath);
-            WriteNaughtyStrings(writer, provider, categories);
-        }
+        await WriteTheNaughtyStrings(categories);
 
-        var bogusPath = Path.GetFullPath("../../../../NaughtyStrings.Bogus/Naughty.cs");
-        File.Delete(bogusPath);
-        await using (var writer = File.CreateText(bogusPath))
-        {
-            WriteBogus(writer, categories);
-        }
+        await WriteNaughty(categories);
+    }
+
+    static async Task WriteNaughty(List<Category> categories)
+    {
+        var path = Path.GetFullPath("../../../../NaughtyStrings.Bogus/Naughty.cs");
+        File.Delete(path);
+        await using var stream = File.Create(path);
+        await using var writer = new StreamWriter(stream, encoding: Encoding.Unicode);
+        WriteBogus(writer, categories);
+    }
+
+    static async Task WriteTheNaughtyStrings(List<Category> categories)
+    {
+        var path = Path.GetFullPath("../../../../NaughtyStrings/TheNaughtyStrings.cs");
+        File.Delete(path);
+        using var provider = CodeDomProvider.CreateProvider("CSharp");
+        await using var stream = File.Create(path);
+        await using var writer = new StreamWriter(stream, encoding: Encoding.Unicode);
+        WriteNaughtyStrings(writer, provider, categories);
     }
 
     static void WriteBogus(StreamWriter writer, List<Category> categories)
