@@ -96,7 +96,7 @@ public partial class Naughty : DataSet
     public static partial class TheNaughtyStrings
     {");
 
-        var lines = categories.SelectMany(x => x.Lines).ToList();
+        var lines = categories.SelectMany(_ => _.Lines).ToList();
 
         WriteList(writer, provider, "All", "All naughty strings.", lines);
 
@@ -148,7 +148,7 @@ public partial class Naughty : DataSet
         foreach (var group in strings)
         {
             var allLines = group.Split('\n');
-            var description = string.Join(' ', allLines.Skip(1).TakeWhile(x => x.StartsWith('#')).Select(TrimHash));
+            var description = string.Join(' ', allLines.Skip(1).TakeWhile(_ => _.StartsWith('#')).Select(TrimHash));
             var lineZero = allLines[0];
             var title = TrimHash(lineZero)
                 .Split(":").First()
@@ -168,13 +168,13 @@ public partial class Naughty : DataSet
 
     static List<string> GetLines(string[] allLines)
     {
-        var list = allLines.Where(x => x.Contains("          ")).ToList();
+        var list = allLines.Where(_ => _.Contains("          ")).ToList();
         if (list.Count > 0)
         {
-            return list.Select(x => x.Replace("#	", "").Split("          ").First()).ToList();
+            return list.Select(_ => _.Replace("#	", "").Split("          ").First()).ToList();
         }
 
-        return allLines.Skip(1).Where(x => x.Length > 0 && !x.StartsWith('#')).ToList();
+        return allLines.Skip(1).Where(_ => _.Length > 0 && !x.StartsWith('#')).ToList();
     }
 
     static string TrimHash(string s) =>
