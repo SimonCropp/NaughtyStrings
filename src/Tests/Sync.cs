@@ -29,72 +29,80 @@ public class Sync
 
     static void WriteBogus(StreamWriter writer, List<Category> categories)
     {
-        writer.WriteLine(@"using Bogus;
+        writer.WriteLine(
+            """
+            using Bogus;
 
-namespace NaughtyStrings.Bogus;
+            namespace NaughtyStrings.Bogus;
 
-public partial class Naughty : DataSet
-{
-    /// <summary>
-    /// All naughty strings.
-    /// </summary>
-    public IEnumerable<string> Strings(uint num = 1)
-    {
-        for (var i = 0; i < num; i++)
+            public partial class Naughty : DataSet
+            {
+                /// <summary>
+                /// All naughty strings.
+                /// </summary>
+                public IEnumerable<string> Strings(uint num = 1)
+                {
+                    for (var i = 0; i < num; i++)
+                    {
+                        yield return String();
+                    }
+                }
+
+                /// <summary>
+                /// A naughty string.
+                /// </summary>
+                public string String()
+                {
+                    var index = Random.Number(TheNaughtyStrings.All.Count - 1);
+                    return TheNaughtyStrings.All[index];
+                }
+            """);
+
+        foreach (var category in categories)
         {
-            yield return String();
+            WriteBogusItem(writer, category.Title, category.Description);
         }
-    }
 
-    /// <summary>
-    /// A naughty string.
-    /// </summary>
-    public string String()
-    {
-        var index = Random.Number(TheNaughtyStrings.All.Count - 1);
-        return TheNaughtyStrings.All[index];
-    }");
-
-    foreach (var category in categories)
-    {
-        WriteBogusItem(writer, category.Title, category.Description);
-    }
-
-    writer.WriteLine(@"
-}");
+        writer.WriteLine("}");
     }
 
     static void WriteBogusItem(StreamWriter writer, string name, string comment) =>
-        writer.WriteLine($@"
-        /// <summary>
-        /// {comment}
-        /// </summary>
-        public IEnumerable<string> {name}(uint num = 1)
-        {{
-            for (var i = 0; i < num; i++)
-            {{
-                yield return {name}();
-            }}
-        }}
+        writer.WriteLine(
+            $$"""
 
-        /// <summary>
-        /// {comment}
-        /// </summary>
-        public string {name}()
-        {{
-            var index = Random.Number(TheNaughtyStrings.{name}.Count - 1);
-            return TheNaughtyStrings.{name}[index];
-        }}");
+                  /// <summary>
+                  /// {{comment}}
+                  /// </summary>
+                  public IEnumerable<string> {{name}}(uint num = 1)
+                  {
+                      for (var i = 0; i < num; i++)
+                      {
+                          yield return {{name}}();
+                      }
+                  }
+
+                  /// <summary>
+                  /// {{comment}}
+                  /// </summary>
+                  public string {{name}}()
+                  {
+                      var index = Random.Number(TheNaughtyStrings.{{name}}.Count - 1);
+                      return TheNaughtyStrings.{{name}}[index];
+                  }
+              """);
 
     static void WriteNaughtyStrings(StreamWriter writer, CodeDomProvider provider, List<Category> categories)
     {
-        writer.WriteLine(@"namespace NaughtyStrings
-#if Bogus
-.Bogus
-#endif
-{
-    public static partial class TheNaughtyStrings
-    {");
+        writer.WriteLine(
+            """
+            #if Bogus
+            namespace NaughtyStrings.Bogus;
+            #else
+            namespace NaughtyStrings;
+            #endif
+            public static partial class TheNaughtyStrings
+            {
+            """);
 
         var lines = categories.SelectMany(_ => _.Lines).ToList();
 
@@ -105,9 +113,7 @@ public partial class Naughty : DataSet
             WriteList(writer, provider, category.Title, category.Description, category.Lines);
         }
 
-        writer.WriteLine(@"
-    }
-}");
+        writer.WriteLine("}");
     }
 
     static void WriteList(StreamWriter writer, CodeDomProvider provider, string name, string comment, IEnumerable<string> lines)
@@ -116,23 +122,27 @@ public partial class Naughty : DataSet
         {
             comment += ".";
         }
-        writer.WriteLine($@"
-        /// <summary>
-        /// {comment}
-        /// </summary>
-        public static IReadOnlyList<string> {name} = new List<string>
-        {{");
+
+        writer.WriteLine(
+            $$"""
+
+                  /// <summary>
+                  /// {{comment}}
+                  /// </summary>
+                  public static IReadOnlyList<string> {{name}} = new List<string>
+                  {
+              """);
         foreach (var line in lines)
         {
             WriteLine(writer, provider, line);
         }
 
-        writer.WriteLine("        };");
+        writer.WriteLine("    };");
     }
 
     static void WriteLine(StreamWriter writer, CodeDomProvider provider, string line)
     {
-        writer.Write("            ");
+        writer.Write("        ");
         if (line.StartsWith('\t'))
         {
             writer.Write('@');
@@ -144,7 +154,10 @@ public partial class Naughty : DataSet
 
     static IEnumerable<Category> Parse(string content)
     {
-        var strings = content.Split(new[] {"\n\n#\t"}, StringSplitOptions.None);
+        var strings = content.Split(new[]
+        {
+            "\n\n#\t"
+        }, StringSplitOptions.None);
         foreach (var group in strings)
         {
             var allLines = group.Split('\n');
@@ -174,7 +187,7 @@ public partial class Naughty : DataSet
             return list.Select(_ => _.Replace("#	", "").Split("          ").First()).ToList();
         }
 
-        return allLines.Skip(1).Where(_ => _.Length > 0 && !x.StartsWith('#')).ToList();
+        return allLines.Skip(1).Where(_ => _.Length > 0 && !_.StartsWith('#')).ToList();
     }
 
     static string TrimHash(string s) =>
