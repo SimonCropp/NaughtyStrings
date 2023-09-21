@@ -6,6 +6,8 @@
 
 Provides a strong typed .NET API for the [Big List of Naughty Strings](https://github.com/minimaxir/big-list-of-naughty-strings).
 
+**See [Milestones](../../milestones?state=closed) for release notes.**
+
 Some example strings:
 
 ```
