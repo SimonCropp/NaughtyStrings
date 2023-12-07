@@ -99,7 +99,6 @@ public void Run()
 <!-- endSnippet -->
 
 
-
 ## Icon
 
 [Naughty](https://thenounproject.com/term/naughty/1777956/) designed by [AomAm](https://thenounproject.com/AomAm/) from [The Noun Project](https://thenounproject.com).
