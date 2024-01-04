@@ -162,10 +162,7 @@ public class Sync
 
     static IEnumerable<Category> Parse(string content)
     {
-        var strings = content.Split(new[]
-        {
-            "\n\n#\t"
-        }, StringSplitOptions.None);
+        var strings = content.Split(["\n\n#\t"], StringSplitOptions.None);
         foreach (var group in strings)
         {
             var allLines = group.Split('\n');
