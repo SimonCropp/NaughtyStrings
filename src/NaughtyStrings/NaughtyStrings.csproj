@@ -4,7 +4,7 @@
     <Description>Exposes Naughty Strings (https://github.com/minimaxir/big-list-of-naughty-strings) to .NET.</Description>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Polyfill" Version="2.0.1" PrivateAssets="all" />
+    <PackageReference Include="Polyfill" Version="2.1.0" PrivateAssets="all" />
     <PackageReference Include="ProjectDefaults" Version="1.0.108" PrivateAssets="all" />
   </ItemGroup>
 </Project>
