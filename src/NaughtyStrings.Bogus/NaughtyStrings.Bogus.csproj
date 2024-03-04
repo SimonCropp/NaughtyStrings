@@ -8,7 +8,7 @@
     <Compile Include="..\NaughtyStrings\TheNaughtyStrings.cs" />
     <Compile Include="..\NaughtyStrings\TheNaughtyStrings_Extra.cs" />
 
-    <PackageReference Include="Bogus" Version="35.4.0" />
+    <PackageReference Include="Bogus" Version="35.4.1" />
     <PackageReference Include="ProjectDefaults" Version="1.0.118" PrivateAssets="all" />
   </ItemGroup>
 </Project>
