@@ -21,5 +21,4 @@ public partial class Naughty
         var index = Random.Number(TheNaughtyStrings.SpecialWordCharacters.Count - 1);
         return TheNaughtyStrings.SpecialWordCharacters[index];
     }
-
 }

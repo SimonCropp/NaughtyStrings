@@ -1,11 +1,9 @@
-﻿using Bogus;
-using NaughtyStrings;
-// ReSharper disable UnusedVariable
+﻿// ReSharper disable UnusedVariable
 // ReSharper disable UnusedParameter.Local
 
 public class Usage
 {
-    public void Run()
+    public static void Run()
     {
         #region usage
 

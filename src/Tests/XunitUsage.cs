@@ -1,6 +1,4 @@
-﻿using NaughtyStrings;
-
-public class XunitUsage
+﻿public class XunitUsage
 {
     #region xUnitUsage
 
