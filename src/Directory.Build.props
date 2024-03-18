@@ -7,5 +7,7 @@
     <LangVersion>preview</LangVersion>
     <PackageTags>NaughtyStrings, Bogus</PackageTags>
     <ResolveAssemblyReferencesSilent>true</ResolveAssemblyReferencesSilent>
+    <NuGetAuditMode>all</NuGetAuditMode>
+    <NuGetAuditLevel>low</NuGetAuditLevel>
   </PropertyGroup>
 </Project>
