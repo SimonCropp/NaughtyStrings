@@ -84,7 +84,7 @@ Debug.WriteLine(target.Property2);
 The below example uses the `MemberDataAttribute` to consume all naughty strings from a helper class. See [Creating parameterised tests](https://andrewlock.net/creating-parameterised-tests-in-xunit-with-inlinedata-classdata-and-memberdata/#loadingdatafromapropertyormethodonadifferentclass) and [Working With InlineData, MemberData, ClassData](http://hamidmosalla.com/2017/02/25/xunit-theory-working-with-inlinedata-memberdata-classdata/) for more information.
 
 <!-- snippet: xUnitUsage -->
-<a id='snippet-xunitusage'></a>
+<a id='snippet-xUnitUsage'></a>
 ```cs
 [Fact]
 public void Run()
@@ -95,7 +95,7 @@ public void Run()
     }
 }
 ```
-<sup><a href='/src/Tests/XunitUsage.cs#L3-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-xunitusage' title='Start of snippet'>anchor</a></sup>
+<sup><a href='/src/Tests/XunitUsage.cs#L3-L14' title='Snippet source file'>snippet source</a> | <a href='#snippet-xUnitUsage' title='Start of snippet'>anchor</a></sup>
 <!-- endSnippet -->
 
 
