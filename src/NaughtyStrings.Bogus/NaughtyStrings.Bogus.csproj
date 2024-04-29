@@ -9,6 +9,6 @@
     <Compile Include="..\NaughtyStrings\TheNaughtyStrings_Extra.cs" />
 
     <PackageReference Include="Bogus" Version="35.5.0" />
-    <PackageReference Include="ProjectDefaults" Version="1.0.126" PrivateAssets="all" />
+    <PackageReference Include="ProjectDefaults" Version="1.0.127" PrivateAssets="all" />
   </ItemGroup>
 </Project>
