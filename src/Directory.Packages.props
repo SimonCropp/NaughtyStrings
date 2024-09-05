@@ -6,7 +6,7 @@
   <ItemGroup>
     <PackageVersion Include="Bogus" Version="35.6.1" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="27.0.2" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.0" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
     <PackageVersion Include="Polyfill" Version="6.5.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.135" />
     <PackageVersion Include="System.CodeDom" Version="8.0.0" />
