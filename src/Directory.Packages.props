@@ -14,6 +14,6 @@
     <PackageVersion Include="UnicodeInformation" Version="2.7.1" />
     <PackageVersion Include="Verify.XunitV3" Version="28.9.0" />
     <PackageVersion Include="xunit.v3" Version="1.0.1" />
-    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.1" />
+    <PackageVersion Include="xunit.runner.visualstudio" Version="3.0.2" />
   </ItemGroup>
 </Project>
