@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <OutputType>Exe</OutputType>
-    <NoWarn>xUnit1051</NoWarn>
+    <NoWarn>$(NoWarn);xUnit1051</NoWarn>
     <RootNamespace>testing</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
