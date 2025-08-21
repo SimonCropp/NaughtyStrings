@@ -7,7 +7,7 @@
     <PackageVersion Include="Bogus" Version="35.6.3" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.0.0-beta.2" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
-    <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.0" />
+    <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.1" />
     <PackageVersion Include="Polyfill" Version="8.8.0" />
     <PackageVersion Include="ProjectDefaults" Version="1.0.157" />
     <PackageVersion Include="System.CodeDom" Version="9.0.8" />
