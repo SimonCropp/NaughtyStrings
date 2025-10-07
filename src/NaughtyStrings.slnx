@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="appveyor.yml" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+  </Folder>
+  <Project Path="NaughtyStrings.Bogus/NaughtyStrings.Bogus.csproj" />
+  <Project Path="NaughtyStrings/NaughtyStrings.csproj" />
+  <Project Path="Tests/Tests.csproj" />
+</Solution>
