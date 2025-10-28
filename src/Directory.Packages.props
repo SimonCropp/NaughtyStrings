@@ -13,7 +13,7 @@
     <PackageVersion Include="System.CodeDom" Version="9.0.10" />
     <PackageVersion Include="System.Net.Http" Version="4.3.4" />
     <PackageVersion Include="UnicodeInformation" Version="2.7.1" />
-    <PackageVersion Include="Verify.XunitV3" Version="31.0.5" />
+    <PackageVersion Include="Verify.XunitV3" Version="31.1.0" />
     <PackageVersion Include="xunit.v3" Version="3.1.0" />
     <PackageVersion Include="xunit.runner.visualstudio" Version="3.1.5" />
   </ItemGroup>
