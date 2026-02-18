@@ -5,7 +5,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="System.CodeDom" />
-    <PackageReference Include="System.Net.Http" />
     <PackageReference Include="UnicodeInformation" />
     <PackageReference Include="Verify.TUnit" />
     <PackageReference Include="Argon" />
