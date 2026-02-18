@@ -1,9 +1,9 @@
 ﻿public class Sync
 {
-    [Fact]
+    [Test]
     public async Task SyncNaughtyStrings()
     {
-        HttpClient httpClient = new();
+        using var httpClient = new HttpClient();
         var content = await httpClient.GetStringAsync("https://raw.githubusercontent.com/minimaxir/big-list-of-naughty-strings/master/blns.txt");
 
         var categories = Parse(content).ToList();
