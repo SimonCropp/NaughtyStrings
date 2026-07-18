@@ -8,7 +8,16 @@ build_script:
     Invoke-WebRequest "https://dot.net/v1/dotnet-install.ps1" -OutFile "./dotnet-install.ps1"
     ./dotnet-install.ps1 -JSonFile global.json -Architecture x64 -InstallDir 'C:\Program Files\dotnet'
 - dotnet build src --configuration Release
-- dotnet test --solution src/NaughtyStrings.slnx --configuration Release --no-build --no-restore
+- dotnet test --solution src/NaughtyStrings.slnx --configuration Release --no-build --no-restore --results-directory TestResults --report-trx
 test: off
+on_finish:
+- pwsh: |
+    $url = "https://ci.appveyor.com/api/testresults/mstest/$env:APPVEYOR_JOB_ID"
+    $client = [System.Net.WebClient]::new()
+    foreach ($trx in Get-ChildItem TestResults -Filter *.trx -Recurse -ErrorAction SilentlyContinue)
+    {
+      Write-Host "Uploading $($trx.FullName)"
+      $client.UploadFile($url, $trx.FullName)
+    }
 artifacts:
 - path: nugets\*.nupkg
