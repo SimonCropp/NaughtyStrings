@@ -7,16 +7,16 @@
     <PackageVersion Include="Bogus" Version="35.6.5" />
     <PackageVersion Include="MarkdownSnippets.MsBuild" Version="28.4.1" />
     <PackageVersion Include="Microsoft.Sbom.Targets" Version="4.1.5" />
-    <PackageVersion Include="Polyfill" Version="10.11.2" />
-    <PackageVersion Include="ProjectDefaults" Version="1.0.174" />
+    <PackageVersion Include="Polyfill" Version="11.0.1" />
+    <PackageVersion Include="ProjectDefaults" Version="1.0.175" />
     <PackageVersion Include="System.CodeDom" Version="10.0.10" />
     <PackageVersion Include="UnicodeInformation" Version="2.7.1" />
-    <PackageVersion Include="Verify.TUnit" Version="31.24.1" />
-    <PackageVersion Include="Argon" Version="0.35.1" />
-    <PackageVersion Include="DiffEngine" Version="19.3.2" />
+    <PackageVersion Include="Verify.TUnit" Version="31.26.0" />
+    <PackageVersion Include="Argon" Version="0.35.2" />
+    <PackageVersion Include="DiffEngine" Version="19.3.3" />
     <PackageVersion Include="EmptyFiles" Version="8.18.2" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.0" />
-    <PackageVersion Include="Verify" Version="31.24.1" />
-    <PackageVersion Include="TUnit" Version="1.59.0" />
+    <PackageVersion Include="Verify" Version="31.26.0" />
+    <PackageVersion Include="TUnit" Version="1.61.15" />
   </ItemGroup>
 </Project>
