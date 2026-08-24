@@ -11,12 +11,12 @@
     <PackageVersion Include="ProjectDefaults" Version="1.0.180" />
     <PackageVersion Include="System.CodeDom" Version="10.0.11" />
     <PackageVersion Include="UnicodeInformation" Version="2.7.1" />
-    <PackageVersion Include="Verify.TUnit" Version="32.0.0-beta.11" />
+    <PackageVersion Include="Verify.TUnit" Version="32.0.0-beta.14" />
     <PackageVersion Include="Argon" Version="0.35.2" />
-    <PackageVersion Include="DiffEngine" Version="20.0.0-beta.30" />
+    <PackageVersion Include="DiffEngine" Version="20.0.0-beta.34" />
     <PackageVersion Include="EmptyFiles" Version="8.18.2" />
     <PackageVersion Include="SimpleInfoName" Version="3.2.0" />
-    <PackageVersion Include="Verify" Version="32.0.0-beta.11" />
-    <PackageVersion Include="TUnit" Version="1.65.38" />
+    <PackageVersion Include="Verify" Version="32.0.0-beta.14" />
+    <PackageVersion Include="TUnit" Version="1.65.51" />
   </ItemGroup>
 </Project>
