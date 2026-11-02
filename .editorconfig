@@ -382,6 +382,9 @@ resharper_convert_if_statement_to_conditional_ternary_expression_highlighting = 
 resharper_convert_conditional_ternary_expression_to_switch_expression_highlighting = none
 resharper_convert_if_statement_to_return_statement_highlighting = none
 
+# Use concrete types when possible for improved performance
+dotnet_diagnostic.CA1859.severity = error
+
 # Xml files
 [*.{xml,config,nuspec,resx,vsixmanifest,csproj,targets,props,fsproj}]
 indent_size = 2
