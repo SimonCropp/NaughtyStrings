@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;net472;net11.0</TargetFrameworks>
     <Description>Extends Bogus (https://github.com/bchavez/Bogus) to use Naughty Strings (https://github.com/minimaxir/big-list-of-naughty-strings).</Description>
     <DefineConstants>$(DefineConstants);Bogus</DefineConstants>
   </PropertyGroup>
